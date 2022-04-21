@@ -1,0 +1,19 @@
+// Base: animations, base, typography, and utilies.
+@import './scss/base/_typography.scss';
+@import './scss/base/_global.scss';
+
+
+
+// Layout: Header, footer, grid, navigation
+// @import './scss/layout/_footer.scss';
+
+// Pages: Have a single scss for each specific page
+
+// @import './scss/pages/_home.scss';
+
+// Vendor: handles 3rd party css
+
+// Components: have a single scss file for each individual component
+@import './scss/components/_nemo-hover.scss';
+
+
