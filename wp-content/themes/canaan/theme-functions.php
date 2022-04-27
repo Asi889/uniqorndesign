@@ -18,7 +18,7 @@ add_action('wp_loaded', function () {
         die();
     }
 });
-
+add_theme_support( 'post-thumbnails' );
 
 add_action('init', 'canaan_init');
 function canaan_init()

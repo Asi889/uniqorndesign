@@ -2,6 +2,8 @@
 defined('ABSPATH') || die();
 ?>
 </div>
+<?php get_template_part('static/svgs/logo'); ?>
+
 <!-- end of sticky-footer -->
 
 <footer>

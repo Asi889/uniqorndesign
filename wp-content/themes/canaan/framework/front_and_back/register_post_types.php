@@ -35,6 +35,32 @@ function canaan_register_post_types_cb()
 		's'
 	);
 	register_post_type($args['rewrite']['slug'], $args);
+
+	$args = get_register_post_type_args(
+		'Article',
+		'article',
+		[
+			'menu_icon' => 'dashicons-format-quote',
+			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail'],
+		'taxonomies'=>['post_tag'],
+			'show_in_rest' => true,
+		],
+		's'
+	);
+	register_post_type($args['rewrite']['slug'], $args);
+
+	$args = get_register_post_type_args(
+		'Project',
+		'project',
+		[
+			'menu_icon' => 'dashicons-format-quote',
+			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail'],
+		'taxonomies'=>['post_tag'],
+			'show_in_rest' => true,
+		],
+		's'
+	);
+	register_post_type($args['rewrite']['slug'], $args);
 }
 /**
  * canaan: get defuelt vals for register a post type.

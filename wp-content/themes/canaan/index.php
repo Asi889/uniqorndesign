@@ -15,7 +15,7 @@ get_header();
         גודל הטקסט ובעיקר גובה השורה (Line Height) הם שייקבעו את הסדר והעקביות.</p>
 
     <div class="flex flex-col gap-y-4 max-w-sm mx-auto mt-16">
-        <h1 class="h1 pb-3"><?= $text; ?></h1>
+        <h1 class="h1 pb-3 text-baseMedium montserrat"><?= $text; ?></h1>
         <hr class="border-gray-300">
         <h2 class="h2 pb-3"><?= $text; ?></h2>
         <hr class="border-gray-300">

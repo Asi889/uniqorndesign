@@ -4,14 +4,15 @@ if (!defined('ABSPATH')) {
 }
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="<?= boolval($_ENV['IS_DEV']) ? 'axe-is-dev' : '';?>">
+<html <?php language_attributes(); ?> class="<?= boolval($_ENV['IS_DEV']) ? 'axe-is-dev' : ''; ?>">
 
 <head>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <?php // get_template_part('parts/favicon'); 
     ?>
     <?php get_template_part('parts/ga-tracking'); ?>
-    <?php // get_template_part('parts/font-loader');
+    <?php
+    // get_template_part('parts/font-loader');
     ?>
     <script>
         var __mainData = {
@@ -39,6 +40,9 @@ if (!defined('ABSPATH')) {
 <body <?php body_class(); ?>>
     <div id="app">
         <div class="sticky-footer">
-            <header>
-
+            <header class="h-20">
+                <?php
+                get_template_part('header-cmps/header-site', null, ['name' => '']);
+                get_template_part('header-cmps/header-mobile', null, []);
+                ?>
             </header>

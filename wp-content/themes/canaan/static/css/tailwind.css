@@ -9,9 +9,5 @@
         --white: #fff;
     }
 
-    html,
-    body {
-        font-family: "Assistant", sans-serif;
-        color: var(--full-height, #404040);
-    }
+    
 }

@@ -13,7 +13,14 @@ function crb_attach_theme_options()
     $metaBox->add_tab('כללי', array(
         Field::make('complex', "{$prefix}email_accounts", 'E-mails for site notfications')
             ->add_fields(array(
-                Field::make('text', 'email', 'E-mail')->set_attribute( 'type', 'email' )->set_attribute( 'placeholder', 'test@test.com' ),
-            ))
+                Field::make('text', 'email', 'E-mail')->set_attribute('type', 'email')->set_attribute('placeholder', 'test@test.com'),
+
+            )),
+        Field::make('complex', $prefix . 'main_link', 'רשימת לינקים')
+            ->add_fields(array(
+                Field::make('text', 'title', 'שם הקישור'),
+                Field::make('image', 'image', 'לוגו'),
+                Field::make('text', 'href', 'לינק  הקישור')
+            )),
     ));
 }

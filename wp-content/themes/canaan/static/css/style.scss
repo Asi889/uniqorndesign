@@ -17,3 +17,32 @@
 @import './scss/components/_nemo-hover.scss';
 
 
+.montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.rubik{
+    font-family: 'Rubik', sans-serif;
+}
+
+.gardientGreen{
+    background: linear-gradient(252.37deg, #FDA14C 33.76%, #42CD60 74.9%);
+    opacity: 0.4;
+}
+
+.letsTalkGardient{
+    background: linear-gradient(95.34deg, rgba(232, 196, 254, 0.4) -0.51%, rgba(253, 195, 220, 0.4) 128.64%);
+    border-radius: 16px;        
+
+}
+.letsTalkTitle{
+    background: linear-gradient(95.34deg, #8803DA -0.51%, #D4055C 128.64%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font: transparent;
+}
+.logo-links img{
+    width: 16px;
+    height: 16px;
+}

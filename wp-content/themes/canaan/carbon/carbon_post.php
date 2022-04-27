@@ -26,4 +26,30 @@ function crb_attach_post_options()
                 )),
         )
     );
+
+    $post_type = 'article';
+
+    $prefix = 'article_';
+    $metaBox = Container::make('post_meta', 'הגדרות כלליות');
+    $metaBox->where('post_type', '=', $post_type);
+    $metaBox->add_fields(
+        array(
+            // Field::make('text', $prefix . 'min_read', 'minutes read'),
+        )
+    );
+
+    $post_type = 'project';
+
+    $prefix = 'project_';
+    $metaBox = Container::make('post_meta', 'הגדרות כלליות');
+    $metaBox->where('post_type', '=', $post_type);
+    $metaBox->add_fields(
+        array(
+            Field::make('image', $prefix . 'firstimage', 'תמונה ראשונה')
+            ->set_value_type('id'),
+            Field::make('text', $prefix . 'bottom_link', 'בלוק תחתון'),
+            
+
+        )
+    );
 }
