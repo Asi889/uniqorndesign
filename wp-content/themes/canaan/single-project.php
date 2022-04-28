@@ -9,6 +9,7 @@ $mainObj = new canaan_post($post);
 $url = $mainObj->get_url();
 $pid = $mainObj->get_ID();
 
+// echo $url;
 
 
 

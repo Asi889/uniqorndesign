@@ -1,5 +1,6 @@
 import '../css/tailwind.css';
 import '../css/style.scss';
+import "../css/hamburger.css";
 import AxeCheck from './AxeCheck';
 
 

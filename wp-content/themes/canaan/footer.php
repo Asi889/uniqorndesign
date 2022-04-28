@@ -1,16 +1,21 @@
 <?php
 defined('ABSPATH') || die();
 ?>
+
 </div>
-<?php get_template_part('static/svgs/logo'); ?>
 
 <!-- end of sticky-footer -->
 
 <footer>
-    <div class="bottom tac">
+    <?php
+    get_template_part('footer-cmps/footer-site', null, ['name' => 'asi']);
+    get_template_part('footer-cmps/footer-mobile', null, []);
+    ?>
+    
+    <!-- <div class="bottom tac">
         Dev: <a class="nemo-hover" target="_blank" href="https://www.naamanfrenkel.dev" rel="noopener noreferrer">nemo</a>
-    </div>
-
+    </div> -->
+   
 </footer>
 
 <!-- end of app -->
@@ -18,9 +23,10 @@ defined('ABSPATH') || die();
 
 <?php
 wp_footer();
-echo '<a href="https://naamanfrenkel.dev/" style="display:none; font-size:0px; color:transparent; visibility:hidden;"> Made By Naaman Frenkel; מתכנת נעמן פרנקל </a>';
 
+// echo '<a href="https://naamanfrenkel.dev/" style="display:none; font-size:0px; color:transparent; visibility:hidden;"> Made By Naaman Frenkel; מתכנת נעמן פרנקל </a>';
 ?>
+
 </body>
 
 </html>
