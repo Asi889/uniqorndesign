@@ -15,12 +15,26 @@ $pid=$mainObj->get_ID();
 get_header();
 
 ?>
-<main  class="col-1-1">
-    <article class="col-1-1">
-    </article>
+<main class=" grid">
+    <div class="max-w-7xl mx-auto">
+
+        <?php get_template_part('page-templates/single-projectpage/projectTitle'); ?>
+        <article>
+            <!-- <?php the_content(); ?> -->
+        </article>
+        <?php get_template_part('page-templates/single-article/build-security-article'); ?>
+        
+        
+        <!-- <?php get_template_part('page-templates/single-projectpage/textContent'); ?> -->
+        <!-- <?php get_template_part('page-templates/single-projectpage/first-gallary'); ?> -->
+        
+        <?php get_template_part('page-templates/single-projectpage/moreProjects'); ?>
+        <?php get_template_part('page-templates/single-projectpage/letsTalk'); ?>
+
+    </div>
 
     <aside>
-    
+
     </aside>
 </main>
 

@@ -1,11 +1,13 @@
 // Base: animations, base, typography, and utilies.
 @import './scss/base/_typography.scss';
 @import './scss/base/_global.scss';
+@import './scss/base/swiper.scss';
 
 
 
 // Layout: Header, footer, grid, navigation
 // @import './scss/layout/_footer.scss';
+@import './scss/layout/_navbar.scss';
 
 // Pages: Have a single scss for each specific page
 
@@ -46,6 +48,15 @@
     width: 16px;
     height: 16px;
 }
+.extra2-light{
+    background: rgb(252, 185, 32, 0.6);
+// opacity: 0.6;
+// transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.border-1{
+    border: 1px solid;
+}
+
 
 
 

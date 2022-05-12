@@ -1,6 +1,7 @@
 import '../css/tailwind.css';
 import '../css/style.scss';
 import "../css/hamburger.css";
+import './swiper';
 import AxeCheck from './AxeCheck';
 
 
@@ -20,6 +21,13 @@ const components = [
 
 window.addEventListener('load', function () {
   console.log("Built By naaman, https://naamanfrenkel.dev/");
+});
+
+window.addEventListener('DOMContentLoaded', function () {
+  let form = document.querySelector('form');
+  if (form) {
+    formfunction(form)
+  }
 });
 
 window.addEventListener('DOMContentLoaded', function () {

@@ -1,50 +1,93 @@
-
-hell marry
 <?php
 defined('ABSPATH') || die();
 
 $prefix = 'project_';
 global $posts;
+$projects = $posts;
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
+		<div class="grid  pb-10 px-4 lg:px-[250px]">
+			<div class="grid pb-[60px]">
+				<div>
 
-		<?php if ( have_posts() ) : ?>
+					<h1 class="text-4xl lg:text-[68px] lg:leading-[82px]  font-bold text-[#212121] montserrat pt-20 pb-10  ">
+						Simple work flows allows us to solve complex problems together
+					</h1>
+				</div>
+				<div>
+					<p class="text-2xl montserrat text-[#424242] max-w-[952px]">
+						Subtitle about our strategic design methodology to help businesses get the most from their projects and teams. up to 2 sentences.
+					</p>
+				</div>
+				<div class="flex gap-x-2 lg:gap-x-4 gap-y-3 lg:gap-y-6 flex-wrap pt-5 lg:pt-10 mb-0 lg:mb-[112px]">
+					<a href="" class="text-[#212121] flex items-center gap-x-[7px] content-center bg-[#EEEEEE] text-sm lg:text-2xl px-[20px] py-[8px] rounded-full montserrat">
+						<span>✔</span>
+						<span>All</span>
+						
+					</a>
+					<?php
+					foreach ($projects as $key => $pp) {
+						$all_tags = get_the_tags($pp->ID);
+						
+						foreach ($all_tags as $key => $t) {
+							// print_r($t->name);
+								echo '<a href="" class="text-Burgundy-400 grid content-center border-1 border-solid  border-Burgundy-400 active:bg-blue-400  text-sm lg:text-2xl px-2 lg:px-4  py-2 lg:py-4 rounded-full montserrat">';
+								echo $t->name;
+								echo '</a>';
+						}
+					}		
+					?>
+				</div>
 
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+				<div class=" grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-10 lg:gap-y-20 px-0 lg:px-3 pt-5 lg:pt-5 mt-5 lg:mt-5">
+					<?php
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
 
-			endwhile;
+					foreach ($projects as $key => $p) {
 
-			the_posts_navigation();
+						$posttags = get_the_tags($p->ID);
 
-		else :
+						$image = wp_get_attachment_image_src(get_post_thumbnail_id($p->ID), 'thumbnail');
 
-			get_template_part( 'template-parts/content', 'none' );
+						echo '<div class="w-full grid  py-0 lg:py-3 px-0 lg:px-3  min-h-[547px] max-h-[547px]   rounded-lg hover:drop-shadow-2xl "> ';
+						echo '<div class="px-0 lg:px-4 bg-[#F9F2FF]  max-h-[436px]">';
+						echo '<img class="w-full min-h-[340px] max-h-[341px]" src="' . $image[0] . '" alt="tumb" />';
+						echo '</div>';
+						echo '<div class="pt-4 lg:pt-5">';
+						echo '<h2 class="font-bold text-xl lg:text-2xl text-[#424242]  montserrat">' . $p->post_title . '</h2>';
+						echo '<div class="flex gap-x-4 pt-3 pb-3">';
+						if ($posttags) {
+							foreach ($posttags as $key => $tag) {
+								echo '<h4 class="text-Burgundy-400 grid content-center bg-[#FFF6FA] text-sm px-[10px] py-[2px] rounded-full montserrat max-h-8">';
+								echo $tag->name;
+								echo '</h4>';
+							}
+						}
+						echo '</div>';
+						echo '</div>';
+						echo '</div>';
+					}
+					?>
+				</div>
+				<a class=" block lg:hidden max-w-[111px] ml-4  py-4 px-4 bg-Burgundy-400 text-[#FFF6FA] text-base lg:text-2xl font-semibold montserrat rounded-md justify-self-center mt-10" href="">See more</a>
+			</div>
 
-		endif;
-		?>
+			
+		</div>
+		<div class=" bg-[#F4FFF7]">
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			<?php get_template_part('page-templates/archive-project-page/testimonials'); ?>
+		</div>
+		<?php get_template_part('page-templates/archive-project-page/partners'); ?>
+		<?php get_template_part('page-templates/single-projectpage/letsTalk'); ?>
+
+
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_footer();

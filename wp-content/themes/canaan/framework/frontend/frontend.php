@@ -47,3 +47,12 @@ function populate_children($menu_array, $menu_item)
     return $children;
 }
 
+function countMinutesToRead($content)
+{
+    $count = str_word_count($content);
+    // if($content < 300){
+    //     return "less";
+    // }
+    return round($count/60);
+}
+

@@ -8,11 +8,15 @@ if (!defined('ABSPATH')) {
 
 <head>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <?php // get_template_part('parts/favicon'); 
     ?>
     <?php get_template_part('parts/ga-tracking'); ?>
     <?php
-    // get_template_part('parts/font-loader');
+    get_template_part('parts/font-loader');
     ?>
     <script>
         var __mainData = {

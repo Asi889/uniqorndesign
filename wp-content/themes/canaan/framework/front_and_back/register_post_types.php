@@ -20,9 +20,10 @@ add_action('init', 'canaan_register_post_types_cb');
 function canaan_register_post_types_cb()
 {
 
-	// $args = get_register_taxonomy_args('כותבים','writer','category',['menu_icon' => 'dashicons-carrot',],'ים');
-	// register_taxonomy( $args['rewrite']['slug'],$args['rewrite']['slug'], $args );
-	// register_taxonomy_for_object_type('writer','post');
+	$args = get_register_taxonomy_args('writer name','writer','category',['menu_icon' => 'dashicons-carrot',],'s');
+	$args = get_register_taxonomy_args('tags','tags');
+	register_taxonomy( $args['rewrite']['slug'],$args['rewrite']['slug'], $args );
+	register_taxonomy_for_object_type('writer','post','tags');
 
 	$args = get_register_post_type_args(
 		'Lead',
@@ -41,8 +42,8 @@ function canaan_register_post_types_cb()
 		'article',
 		[
 			'menu_icon' => 'dashicons-format-quote',
-			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail'],
-		'taxonomies'=>['post_tag'],
+			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail','excerpt'],
+		'taxonomies'=>['post_tag','writer'],
 			'show_in_rest' => true,
 		],
 		's'
@@ -54,7 +55,20 @@ function canaan_register_post_types_cb()
 		'project',
 		[
 			'menu_icon' => 'dashicons-format-quote',
-			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail'],
+			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail','excerpt'],
+		'taxonomies'=>['post_tag','writer'],
+			'show_in_rest' => true,
+		],
+		's'
+	);
+	register_post_type($args['rewrite']['slug'], $args);
+
+	$args = get_register_post_type_args(
+		'Testimonials',
+		'testimonials',
+		[
+			'menu_icon' => 'dashicons-format-quote',
+			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail','excerpt'],
 		'taxonomies'=>['post_tag'],
 			'show_in_rest' => true,
 		],

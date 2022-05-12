@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<div class="flex gap-x-3">
+<div class="flex gap-x-3 mt-4 lg:mt-8 px-4">
     <?php
     $posttags = get_the_tags();
     foreach ($posttags as $key => $tag) {

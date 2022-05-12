@@ -19,8 +19,9 @@ function crb_attach_theme_options()
         Field::make('complex', $prefix . 'main_link', 'רשימת לינקים')
             ->add_fields(array(
                 Field::make('text', 'title', 'שם הקישור'),
-                Field::make('image', 'image', 'לוגו'),
                 Field::make('text', 'href', 'לינק  הקישור')
             )),
+            Field::make('text', $prefix . 'lets_talk_link', 'קישור ל"בוא נדבר"')
+            
     ));
 }

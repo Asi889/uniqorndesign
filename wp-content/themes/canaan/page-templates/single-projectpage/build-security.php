@@ -6,11 +6,12 @@
 
         <?php
         $img_id = carbon_get_post_meta(get_the_ID(), 'project_firstimage'); 
-      
-        // die;
+    //   print_r($img_id);
+    //     die;
         echo get_img_html($img_id);
         ?>
-        <?php include_once(dirname(__FILE__) . '/tags.php'); ?>
+        <?php get_template_part('page-templates/single-projectpage/tags'); ?>
+
     </div>
 
 </div>

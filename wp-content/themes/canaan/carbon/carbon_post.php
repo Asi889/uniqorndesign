@@ -34,7 +34,15 @@ function crb_attach_post_options()
     $metaBox->where('post_type', '=', $post_type);
     $metaBox->add_fields(
         array(
-            // Field::make('text', $prefix . 'min_read', 'minutes read'),
+            Field::make('image', $prefix . 'firstimage', 'תמונה ראשונה')
+                ->set_value_type('id'),
+            Field::make('text', $prefix . 'bottom_link', 'בלוק תחתון'),
+            Field::make('complex', $prefix . 'prifile_picture', 'תמונת פרופיל')
+                ->add_fields(array(
+                    Field::make('image', 'image', 'תמונת'),
+                    Field::make('text', 'text', 'שם')
+                )),
+            Field::make('text', $prefix . 'window_text', 'טקטס לדוגמא'),
         )
     );
 
@@ -46,9 +54,37 @@ function crb_attach_post_options()
     $metaBox->add_fields(
         array(
             Field::make('image', $prefix . 'firstimage', 'תמונה ראשונה')
-            ->set_value_type('id'),
+                ->set_value_type('id'),
             Field::make('text', $prefix . 'bottom_link', 'בלוק תחתון'),
+            Field::make('complex', $prefix . 'prifile_picture', 'תמונת פרופיל')
+                ->add_fields(array(
+                    Field::make('image', 'image', 'תמונת'),
+                    Field::make('text', 'text', 'שם')
+                )),
+            Field::make('text', $prefix . 'window_text', 'טקטס לדוגמא'),
+
+        )
+    );
+
+    $post_type = 'testimonials';
+
+    $prefix = 'testimonials_';
+    $metaBox = Container::make('post_meta', 'הגדרות כלליות');
+    $metaBox->where('post_type', '=', $post_type);
+    $metaBox->add_fields(
+        array(
             
+            Field::make('complex', $prefix . 'testimonial', 'כתב המלצה')
+                ->add_fields(array(
+                    Field::make('image', 'image', 'תמונת'),
+                    Field::make('text', 'name', 'שם'),
+                    Field::make('text', 'job_title', 'תפקיד'),
+                    Field::make('text', 'company', 'חברה'),
+                    Field::make('text', 'text', 'תוכן'),
+                    Field::make('text', 'sub_text', 'תוכן קצר'),
+                    Field::make('image', 'logo', 'לוגו'),
+                )),
+            Field::make('text', $prefix . 'window_text', 'טקטס לדוגמא'),
 
         )
     );

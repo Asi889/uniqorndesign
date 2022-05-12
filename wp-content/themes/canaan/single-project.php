@@ -21,7 +21,7 @@ get_header();
 
         <?php get_template_part('page-templates/single-projectpage/projectTitle'); ?>
         <article>
-            <?php the_content(); ?>
+            <!-- <?php the_content(); ?> -->
         </article>
         <?php get_template_part('page-templates/single-projectpage/build-security'); ?>
         

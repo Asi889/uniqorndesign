@@ -1,0 +1,88 @@
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    // text-align: center;
+    // font-size: 18px;
+    // background: #fff;
+
+    // /* Center slide text vertically */
+    // display: -webkit-box;
+    // display: -ms-flexbox;
+    // display: -webkit-flex;
+    // display: flex;
+    // -webkit-box-pack: center;
+    // -ms-flex-pack: center;
+    // -webkit-justify-content: center;
+    // justify-content: center;
+    // -webkit-box-align: center;
+    // -ms-flex-align: center;
+    // -webkit-align-items: center;
+    // align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .testimonials-portrait-img > img{
+    width: 100px;
+    height: 100px;
+}
+.testimonials-logo-img > img{
+    width: 107px;
+    height: 22px;
+    margin-top: 24px;
+}
+.mySwiper #js-next1{
+    // font-size: 10px!important;
+    // position: absolute!important;
+    // top: 20px!important;
+    right: 22px!important;
+    color: #13471E;
+    // content: 'next';
+    // height: 16px;
+    // width: 9px;
+    // font-size: 20px;
+    
+  }
+.mySwiper #js-next1::after{
+  // font-size: 10px!important;
+    // position: absolute!important;
+    // top: 23px!important;
+    // right: 157px!important;
+    // color: #13471E;
+    // content: 'next';
+    // height: 16px;
+    // width: 9px;
+    // font-size: 20px;
+    
+}
+
+.mySwiper #js-prev1{
+  left: 22px!important;
+  //  font-size: 10px!important;
+    // position: absolute!important;
+    // top: 23px!important;
+    // right: 200px!important;
+    color: #13471E;
+  }
+
+.mySwiper .swiper-button-prev{
+    // font-size: px!important;
+    // position: absolute!important;
+    // top: 23px!important;
+    // right: 200px!important;
+    // font-size: 2px!important;
+    // width: 40px!important;
+    // height: 50px!important;
+    // width: 9px;
+    // height: 16px;
+    color: #13471E;
+    // left: 83%;
+    
+  } 
