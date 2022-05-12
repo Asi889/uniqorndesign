@@ -8,12 +8,16 @@ $prefix = 'project_';
 $mainObj = new canaan_post($post);
 $url = $mainObj->get_url();
 $pid = $mainObj->get_ID();
+// $home_page_link = get_page_by_path( '/home' );
 
 ?>
 
 <div class="hidden md:flex justify-around">
     <div class="flex gap-x-6 items-center">
-        <?php get_template_part('static/svgs/logo'); ?>
+        <a href="<?php echo home_url(); ?>">
+
+            <?php get_template_part('static/svgs/logo'); ?>
+        </a>
 
         <div class="flex">
             <?php

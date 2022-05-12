@@ -5,7 +5,7 @@ global $posts;
 ?>
 
 <div>
-    <h1 class="text-4xl lg:text-5xl text-green-600 montserrat max-w-[842px]">
+    <h1 class="text-4xl lg:text-5xl text-green-600 montserrat max-w-[842px] font-bold">
         The awesome people we work with say about us
     </h1>
 

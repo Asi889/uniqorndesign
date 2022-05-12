@@ -4,7 +4,10 @@
 <div class="hidden md:flex justify-around mt-14 py-5">
     <div class="grid gap-y-6">
         <div class="pt-6">
-            <?php get_template_part('static/svgs/logo'); ?>
+            <a href="<?php echo home_url(); ?>">
+
+                <?php get_template_part('static/svgs/logo'); ?>
+            </a>
         </div>
         <div class="flex gap-x-6 items-end">
             <?php
