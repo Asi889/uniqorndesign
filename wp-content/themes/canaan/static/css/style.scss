@@ -37,6 +37,11 @@
     border-radius: 16px;        
 
 }
+.letsTalkGardient-archive{
+    background: linear-gradient(95.34deg, rgba(232, 196, 254, 0.4) -0.51%, rgba(253, 195, 220, 0.4) 128.64%);
+         
+
+}
 .letsTalkTitle{
     background: linear-gradient(95.34deg, #8803DA -0.51%, #D4055C 128.64%);
     -webkit-background-clip: text;
@@ -57,7 +62,26 @@
     border: 1px solid;
 }
 
+.archive-ellips28 svg{
+    display: block;
+    bottom: 15px;
+
+}
+
+@media screen and (max-width: 1024px) {
+    .archive-ellips28 svg{
+        display: hidden;
+        // bottom: 15px;
+    
+    }
+    
+
+}
 
 
 
 
+
+.btn-active.project-btn {
+    background-color: red;
+}

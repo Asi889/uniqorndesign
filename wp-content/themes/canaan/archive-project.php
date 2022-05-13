@@ -7,7 +7,7 @@ $projects = $posts;
 get_header();
 ?>
 
-<div id="primary" class="content-area">
+<div id="primary " class="content-area archive-project-wrapper" >
 	<main id="main" class="site-main">
 		<div class="grid  pb-10 px-4 lg:px-[250px]">
 			<div class="grid pb-[60px]">
@@ -29,15 +29,21 @@ get_header();
 						
 					</a>
 					<?php
-					foreach ($projects as $key => $pp) {
-						$all_tags = get_the_tags($pp->ID);
+					$terms = get_terms( array(
+						'taxonomy' => 'post_tag',
+						'hide_empty' => false,
+					) );
+					foreach ($terms as $key => $t) {
+						// print_r($t);
+						// die;
+						// $all_tags = get_the_tags($pp->ID);
 						
-						foreach ($all_tags as $key => $t) {
+						
 							// print_r($t->name);
-								echo '<a href="" class="text-Burgundy-400 grid content-center border-1 border-solid  border-Burgundy-400 active:bg-blue-400  text-sm lg:text-2xl px-2 lg:px-4  py-2 lg:py-4 rounded-full montserrat">';
+								echo '<button data-tag-id="'.$t->term_id.'" href="" class="project-btn text-Burgundy-400 grid content-center border-1 border-solid  border-Burgundy-400 active:bg-blue-400  text-sm lg:text-2xl lg:leading-none px-2 lg:px-4 h-[52px]  rounded-full montserrat">';
 								echo $t->name;
-								echo '</a>';
-						}
+								echo '</button>';
+						
 					}		
 					?>
 				</div>
@@ -50,10 +56,15 @@ get_header();
 					foreach ($projects as $key => $p) {
 
 						$posttags = get_the_tags($p->ID);
+						$posttagsid =[];
+						foreach ($posttags as $tag){
+							$posttagsid[] = $tag->term_id;
+						}
+						
 
 						$image = wp_get_attachment_image_src(get_post_thumbnail_id($p->ID), 'thumbnail');
 
-						echo '<div class="w-full grid  py-0 lg:py-3 px-0 lg:px-3  min-h-[547px] max-h-[547px]   rounded-lg hover:drop-shadow-2xl "> ';
+						echo '<div id="'.++$key.'" data-post-tags="['.implode(',', $posttagsid).']" class="project-card w-full grid  py-0 lg:py-3 px-0 lg:px-3  min-h-[547px] max-h-[547px]   rounded-lg hover:drop-shadow-2xl "> ';
 						echo '<div class="px-0 lg:px-4 bg-[#F9F2FF]  max-h-[436px]">';
 						echo '<img class="w-full min-h-[340px] max-h-[341px]" src="' . $image[0] . '" alt="tumb" />';
 						echo '</div>';
@@ -78,12 +89,12 @@ get_header();
 
 			
 		</div>
-		<div class=" bg-[#F4FFF7]">
+		<div class=" bg-[#F4FFF7]  pb-8 lg:pb-[60px] ">
 
 			<?php get_template_part('page-templates/archive-project-page/testimonials'); ?>
 		</div>
 		<?php get_template_part('page-templates/archive-project-page/partners'); ?>
-		<?php get_template_part('page-templates/single-projectpage/letsTalk'); ?>
+		<?php get_template_part('page-templates/archive-project-page/letsTalk-archive'); ?>
 
 
 	</main><!-- #main -->

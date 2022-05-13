@@ -16,7 +16,7 @@
 
         echo '</a>';
         if(str_contains($logo['title'], 'academy')){
-            echo '<a href="' . $logo['href'] . '" class="text-[#424242] hidden lg:block hover:text-black pr-4 pl-2 py-2" target="_blank" rel="noopener noreferrer grid ">';
+            echo '<a href="' . $logo['href'] . '" class="text-[#424242] hover:text-green-500 hidden lg:block  pr-4 pl-2 py-2" target="_blank" rel="noopener noreferrer grid ">';
             echo get_template_part('static/svgs/nav-bar-logos/academy');
             echo '</a>';
         }

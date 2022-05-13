@@ -6,7 +6,7 @@ global $posts;
 get_header();
 ?>
 
-<div id="" class="">
+<div id="archive-article-wrapper" class="">
 	<div class="grid  pb-10">
 		<div class="bg-[#FFF6FA] pb-[60px]">
 
@@ -14,7 +14,7 @@ get_header();
 				Articles
 			</h1>
 
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-4 lg:gap-y-11  px-4 lg:px-[358px]">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-4 lg:gap-y-11  px-4 max-w-[1204px] mx-auto">
 				<?php
 
 				function str_limit($value, $limit = 200, $end = '...')
@@ -29,8 +29,8 @@ get_header();
 				foreach ($projects as $key => $p) {
 
 					$texons = get_the_terms($p->ID, 'writer');
-					print_r($texons);
-					die;
+					// print_r($texons);
+					// die;
 					// $img = get_term_meta($texons[0]->term_id);
 					$image = wp_get_attachment_image_src(get_post_thumbnail_id($p->ID), 'thumbnail');
 
