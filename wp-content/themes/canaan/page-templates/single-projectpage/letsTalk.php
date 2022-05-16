@@ -3,7 +3,7 @@ $contact_page_link = get_page_by_path( '/contact' );
 
 ?>
 <!-- //mt-10 4px -->
-<div class="max-w-7xl mx-auto mt-10">
+<div class="max-w-7xl mx-auto mt-10 montserrat">
     <div class="letsTalkGardient mx-5 px-3 relative py-[90px] lg:py-[60px]">
         <div class="absolute -left-[30%] lg:-left-[7%] top-[50%] lg:top-[13%] ">
             <?php get_template_part('static/svgs/single-project-page/ellips27'); ?>

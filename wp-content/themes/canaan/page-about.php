@@ -11,8 +11,9 @@ get_header();
 ?>
 
 <div id="primary" class="content-area">
-	<main class="grid mt-8 lg:mt-20" id="main" class="site-main">
-		<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-[110px] px-5 lg:px-[250px] py-8 lg:py-0">
+	<main class="grid mt-8 lg:mt-20 max-w-[1476px] mx-auto" id="main" class="site-main">
+	<!-- <main class="grid mt-8 lg:mt-20" id="main" class="site-main"> -->
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-[110px] px-5 lg:px-4  py-8 lg:py-0">
 			<div class="grid montserrat">
 				<?php
 				$content = carbon_get_the_post_meta('page-aboutmain_content');

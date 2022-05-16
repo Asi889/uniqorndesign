@@ -1,4 +1,3 @@
-hell marry single artical
 <?php
 defined('ABSPATH') || die();
 
@@ -15,8 +14,8 @@ $pid=$mainObj->get_ID();
 get_header();
 
 ?>
-<main class=" grid">
-    <div class="max-w-7xl mx-auto">
+<main class=" ">
+    <div class="max-w-[1396px] mx-auto">
 
         <?php get_template_part('page-templates/single-projectpage/projectTitle'); ?>
         <article>

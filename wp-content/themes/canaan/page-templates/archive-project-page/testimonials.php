@@ -5,8 +5,8 @@ global $posts;
 ?>
 
 <div>
-    <h1 class="text-4xl lg:text-5xl text-green-600 montserrat  font-bold px-5 lg:px-[250px] py-[60px] lg:py-20">
-        The awesome people we work  <br class="hidden lg:block"> with say about us
+    <h1 class="text-4xl lg:text-5xl leading-[58px] text-green-600 montserrat  font-bold max-w-[842px] pl-5 pr-5 lg:pr-0  lg:pl-[250px] py-[60px] lg:py-20">
+        The awesome people we work   with say about us
     </h1>
    
 
@@ -65,13 +65,16 @@ global $posts;
 
         <!-- </div> -->
     </div>
-    <div class="bg-[#EEEEEE] px-6 py-6 absolute top-[90%] lg:top-[18%] right-[22%] lg:right-[32%] rounded-full rotate-180 border-[#d8d4d4] border-[1px] z-10">
-
-        <div id="js-next1" class="swiper-button-next"></div>
-    </div>
-    <div class="bg-[#EEEEEE] px-6 py-6 absolute top-[90%]  lg:top-[18%] right-[7%] lg:right-[29%] rounded-full rotate-180 border-[1px] border-[#d8d4d4] z-10">
-
-        <div id="js-prev1" class="swiper-button-prev "></div>
+    <div class="absolute top-[86%] lg:top-[18%] right-[12%] lg:right-[30%] flex gap-x-3">
+        
+        <div class="bg-[#EEEEEE] px-6 py-6 rounded-full rotate-180 border-[#d8d4d4] border-[1px] z-10">
+    
+            <div id="js-next1" class="swiper-button-next"></div>
+        </div>
+        <div class="bg-[#EEEEEE] px-6 py-6 rounded-full rotate-180 border-[1px] border-[#d8d4d4] z-10 ">
+    
+            <div id="js-prev1" class="swiper-button-prev "></div>
+        </div>
     </div>
 </div>
 

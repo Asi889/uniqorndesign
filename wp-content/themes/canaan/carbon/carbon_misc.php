@@ -21,7 +21,12 @@ function crb_attach_theme_options()
                 Field::make('text', 'title', 'שם הקישור'),
                 Field::make('text', 'href', 'לינק  הקישור')
             )),
-            Field::make('text', $prefix . 'lets_talk_link', 'קישור ל"בוא נדבר"')
-            
+        Field::make('text', $prefix . 'lets_talk_link', 'קישור ל"בוא נדבר"'),
+        Field::make('complex', $prefix . 'partners_logo', 'פרטנרים  ')
+            ->add_fields(array(
+                Field::make('image', 'image', 'לוגו'),
+                Field::make('text', 'href', 'לינק  הקישור')
+            )),
+
     ));
 }

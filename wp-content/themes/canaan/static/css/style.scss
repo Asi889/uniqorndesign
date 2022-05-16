@@ -55,33 +55,32 @@
 }
 .extra2-light{
     background: rgb(252, 185, 32, 0.6);
-// opacity: 0.6;
-// transform: matrix(-1, 0, 0, 1, 0, 0);
 }
+
 .border-1{
     border: 1px solid;
 }
 
-.archive-ellips28 svg{
-    display: block;
-    bottom: 15px;
-
-}
-
-@media screen and (max-width: 1024px) {
-    .archive-ellips28 svg{
-        display: hidden;
-        // bottom: 15px;
-    
-    }
-    
-
-}
-
-
-
-
-
 .btn-active.project-btn {
     background-color: red;
 }
+
+.green-gradient{
+    background: linear-gradient(95.34deg, #C0EECA -0.51%, #8EBFFF 128.64%);
+}
+
+.liner-text{
+    background: linear-gradient(89.98deg, #268E3C -5.27%, #002352 126.26%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.liner-blue-green-text{
+    background: linear-gradient(89.6deg, #268E3C 25.2%, #005AD1 92.11%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+

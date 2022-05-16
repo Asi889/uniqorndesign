@@ -1,7 +1,7 @@
 <?php
 ?>
 
-<div class="grid lg:flex justify-between  border-t-[1px] border-[#EEEEEE] mt-8 lg:mt-10 pt-8 lg:pt-10 ">
+<div class="grid lg:flex gap-x-[340px] justify-between  border-t-[1px] border-[#EEEEEE] mt-8 lg:mt-10 pt-8 lg:pt-10 ">
     <div class="grid gap-y-4">
         <h2 class="text-xl lg:text-2xl font-bold text-[#212121] py-[2px]">Let's chat</h1>
             <a href="" class="flex items-center px-4 lg:px-6 py-2 lg:py-3 bg-green-400 pt-4 rounded-md w-fit lg:w-auto">

@@ -12,6 +12,19 @@ function crb_attach_page_options()
     $metaBox = Container::make('post_meta', 'הגדרות כלליות')->where('post_template', '=', $post_template);
     $metaBox->add_fields(array(
         Field::make( 'date', $prefix.'date', 'תאריך' ),
+        Field::make( 'text', $prefix.'top_subtitle', 'כותרת משנית' ),
+        Field::make('complex', $prefix . 'specialize_in', 'ההתמחות שלנו')
+        ->add_fields(array(
+            Field::make('image', 'image', 'תמונה'),
+            Field::make('text', 'title', 'כותרת'),
+            Field::make('text', 'text', 'טקסט')
+        )),
+        Field::make('complex', $prefix . 'vision', 'מה יש לנו')
+        ->add_fields(array(
+            Field::make('image', 'image', 'תמונה'),
+            Field::make('text', 'title', 'כותרת'),
+            Field::make('text', 'text', 'טקסט')
+        )),
     ));
 
 

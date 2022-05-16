@@ -1,7 +1,7 @@
 <?php
 ?>
 
-<div class="px-5 lg:px-[250px] montserrat text-[#424242] pt-[60px] lg:pt-1">
+<div class="px-5 lg:px-4 montserrat text-[#424242] pt-[60px] lg:pt-1">
 
     <h1 class="text-4xl lg:text-5xl font-bold ">Our Values</h1>
 
