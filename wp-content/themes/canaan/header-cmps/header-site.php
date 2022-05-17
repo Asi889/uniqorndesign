@@ -12,9 +12,9 @@ $pid = $mainObj->get_ID();
 
 ?>
 
-<div class="hidden md:flex justify-around">
+<div class="hidden md:flex justify-around ">
     <div class="flex gap-x-6 items-center">
-        <a href="<?php echo home_url(); ?>">
+        <a class="" href="<?php echo home_url(); ?>">
 
             <?php get_template_part('static/svgs/logo'); ?>
         </a>
@@ -24,7 +24,7 @@ $pid = $mainObj->get_ID();
             $header_links = canaan_get_menu_array('primary');
             foreach ($header_links as $key => $value) {
 
-                echo '<a class="font-semibold text-base text-[#424242] hover:text-green-500  px-4 py-2 montserrat ' . implode(' ', $value['classes']) . '" href="' . $value['url'] . '" >' . $value['title'] . '</a>';
+                echo '<a class="font-semibold text-base mobile-text text-[#424242] hover:text-green-500  px-4 py-2 montserrat ' . implode(' ', $value['classes']) . '" href="' . $value['url'] . '" >' . $value['title'] . '</a>';
             }
             ?>
         </div>

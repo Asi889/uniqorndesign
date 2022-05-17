@@ -2,6 +2,7 @@
 if (!defined('ABSPATH')) {
     die();
 }
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="<?= boolval($_ENV['IS_DEV']) ? 'axe-is-dev' : ''; ?>">
@@ -44,7 +45,7 @@ if (!defined('ABSPATH')) {
 <body <?php body_class(); ?>>
     <div id="app">
         <div class="sticky-footer">
-            <header class="h-20">
+            <header class="header-wraper">
                 <?php
                 get_template_part('header-cmps/header-site', null, ['name' => '']);
                 get_template_part('header-cmps/header-mobile', null, []);

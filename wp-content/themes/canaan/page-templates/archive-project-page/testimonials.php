@@ -4,9 +4,9 @@ global $posts;
 // $testimonials = $posts;
 ?>
 
-<div>
-    <h1 class="text-4xl lg:text-5xl leading-[58px] text-green-600 montserrat  font-bold max-w-[842px] pl-5 pr-5 lg:pr-0  lg:pl-[250px] py-[60px] lg:py-20">
-        The awesome people we work   with say about us
+<div class="w-full  pl-5 pr-5 lg:pr-0  lg:pl-[250px] py-[60px] lg:py-20">
+    <h1 class="text-4xl lg:text-5xl leading-[58px] text-green-600 montserrat max-w-[842px] font-bold  ">
+        The awesome people we work with say about us
     </h1>
    
 

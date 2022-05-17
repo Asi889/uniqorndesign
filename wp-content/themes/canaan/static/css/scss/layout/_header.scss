@@ -1,0 +1,45 @@
+body.home{
+    .header-wraper{
+        background-color: #13471E;
+    }
+    .mobile-text{
+        color: white;
+        svg{
+            // fill: white;
+            // stroke: white;
+        }
+        path{
+            fill: white;
+            // stroke: white;
+        }
+
+    }
+    .mobile-text:hover{
+        color: #dad9d9;
+        
+        path{
+            fill: #dad9d9;
+            // stroke: white;
+        }
+
+    }
+    .hamburger1 span{
+        background: white;
+    }
+    .hamburger span{
+        background: white;
+    }
+    .anim{
+        border: none;
+    }
+    .portfolioDisc{
+        background-color: #13471E;
+    }
+    .logo-white{
+        path{
+            fill: white;
+            
+        }
+
+    } 
+}
