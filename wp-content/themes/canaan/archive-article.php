@@ -68,7 +68,7 @@ get_header();
 		<div>
 
 			<?php get_template_part('page-templates/archive-project-page/join-us'); ?>
-			<?php get_template_part('page-templates/single-projectpage/letsTalk'); ?>
+			<?php get_template_part('parts/lets-talk'); ?>
 		</div>
 
 	</div>

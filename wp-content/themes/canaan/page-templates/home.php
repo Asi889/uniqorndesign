@@ -65,7 +65,7 @@ get_header();
     </div>
     <div class="w-full bg-[#F4FFF7]  pb-8 lg:pb-[60px] ">
 
-        <?php get_template_part('page-templates/archive-project-page/testimonials'); ?>
+        <?php get_template_part('parts/testimonials'); ?>
     </div>
     <div class="w-full bg-Burgundy-100">
         <?php get_template_part('page-templates/lp-home-page/article'); ?>

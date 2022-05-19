@@ -9,7 +9,6 @@ defined('ABSPATH') || die();
 <footer>
     <?php
     get_template_part('footer-cmps/footer-site', null, ['name' => 'asi']);
-    get_template_part('footer-cmps/footer-mobile', null, []);
     ?>
     
     <!-- <div class="bottom tac">

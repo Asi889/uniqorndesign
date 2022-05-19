@@ -45,7 +45,8 @@ if (!defined('ABSPATH')) {
 <body <?php body_class(); ?>>
     <div id="app">
         <div class="sticky-footer">
-            <header class="header-wraper">
+            <div class="header-placeholder h-[80px]"></div>
+            <header class="header-wraper fixed h-[80px] top-0 inset-0 bg-white z-50">
                 <?php
                 get_template_part('header-cmps/header-site', null, ['name' => '']);
                 get_template_part('header-cmps/header-mobile', null, []);

@@ -18,7 +18,7 @@ get_header();
 				<?php
 				$content = carbon_get_the_post_meta('page-aboutmain_content');
 
-				echo '<h1 class=" text-[#212121] text-4xl lg:text-[68px] lg:leading-[82px] font-bold ">' . get_the_title() . '</h1>';
+				echo '<h1 class=" text-superDark text-4xl lg:text-[68px] lg:leading-[82px] font-bold ">' . get_the_title() . '</h1>';
 				echo '<div>';
 				echo '<p class="text-2xl lg:text-[32px] lg:leading-10 text-[#424242] font-bold pt-8 lg:pt-0">';
 				echo $content[0]['title'];
@@ -42,7 +42,7 @@ get_header();
 		<?php get_template_part('page-templates/about-page/our-values'); ?>
 		<?php get_template_part('page-templates/about-page/meet-team'); ?>
 		<?php get_template_part('page-templates/archive-project-page/join-us'); ?>
-		<?php get_template_part('page-templates/single-projectpage/letsTalk'); ?>
+        <?php get_template_part('parts/lets-talk'); ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

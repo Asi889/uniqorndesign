@@ -11,6 +11,7 @@ module.exports = {
         secondary: "#00EEBC",
         extraOne: "#FF3644",
         extraTwo: "#FCB920",
+        superDark: "#212121",
         blue:{
           100: "#E8F2FF",
           200: "#C3DAF8",

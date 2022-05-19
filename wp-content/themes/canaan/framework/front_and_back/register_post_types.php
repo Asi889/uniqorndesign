@@ -42,9 +42,9 @@ function canaan_register_post_types_cb()
 		'Article',
 		'article',
 		[
-			'menu_icon' => 'dashicons-format-quote',
+			'menu_icon' => 'dashicons-pressthis',
 			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail','excerpt'],
-		'taxonomies'=>['post_tag','writer'],
+		'taxonomies'=>['post_tag','writer', 'category'],
 			'show_in_rest' => true,
 		],
 		's'
@@ -55,9 +55,9 @@ function canaan_register_post_types_cb()
 		'Project',
 		'project',
 		[
-			'menu_icon' => 'dashicons-format-quote',
+			'menu_icon' => 'dashicons-format-aside',
 			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail','excerpt'],
-		'taxonomies'=>['post_tag','writer'],
+		'taxonomies'=>['post_tag','writer', 'category'],
 			'show_in_rest' => true,
 		],
 		's'
@@ -68,10 +68,9 @@ function canaan_register_post_types_cb()
 		'Testimonials',
 		'testimonials',
 		[
-			'menu_icon' => 'dashicons-format-quote',
-			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail','excerpt'],
-		'taxonomies'=>['post_tag'],
-			'show_in_rest' => true,
+			'menu_icon' => 'dashicons-testimonial',
+			'supports' => ['title',  'editor', 'revisions', 'thumbnail'],
+			'show_in_rest' => false,
 		],
 		's'
 	);

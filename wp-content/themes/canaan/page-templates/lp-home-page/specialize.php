@@ -25,10 +25,10 @@ $what_is = carbon_get_post_meta($tags[0]->ID, 'datatags_what_is');
                 echo '<div class="grid lg:flex ' . (($key % 2 == 0) ? " flex-row-reverse " : " " ). '  justify-between">';
     
                 echo '<div class="max-w-[580px]">';
-                echo '<h4 class="text-8 leading-[39px] lg:text-4xl lg:leading-[48px] text-[#212121] font-bold">' . $c->post_title . '</h4>';
+                echo '<h4 class="text-8 leading-[39px] lg:text-4xl lg:leading-[48px] text-superDark font-bold">' . $c->post_title . '</h4>';
                 echo '<p class="text-2xl  mt-5 lg:mt-4 text-[#424242] ">' . $what_is[0]['text'] . '</p>';
                 echo '<a href="" class=" " target="_blank" rel="noopener noreferrer grid ">';
-                echo '<p class="text-[#212121] text-2xl font-semibold mt-5 ">See all projects</p>';
+                echo '<p class="text-superDark text-2xl font-semibold mt-5 ">See all projects</p>';
                 echo '</a>';
                 echo '</div>';
     
@@ -65,10 +65,10 @@ $what_is = carbon_get_post_meta($tags[0]->ID, 'datatags_what_is');
             //     echo '</div>';
 
             //     echo '<div class="max-w-[580px]">';
-            //     echo '<h4 class="text-8 leading-[39px] lg:text-4xl lg:leading-[48px] text-[#212121] font-bold">' . $c->post_title . '</h4>';
+            //     echo '<h4 class="text-8 leading-[39px] lg:text-4xl lg:leading-[48px] text-superDark font-bold">' . $c->post_title . '</h4>';
             //     echo '<p class="text-2xl  mt-5 lg:mt-4 text-[#424242] ">' . $what_is[0]['text'] . '</p>';
             //     echo '<a href="" class=" " target="_blank" rel="noopener noreferrer grid ">';
-            //     echo '<p class="text-[#212121] text-2xl font-semibold mt-5 ">See all projects</p>';
+            //     echo '<p class="text-superDark text-2xl font-semibold mt-5 ">See all projects</p>';
             //     echo '</a>';
             //     echo '</div>';
     

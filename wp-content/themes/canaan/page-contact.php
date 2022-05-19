@@ -2,7 +2,7 @@
 defined('ABSPATH') || die();
 
 /**
- * Template Name: About
+ * Template Name: Contact 
  *
  */
 

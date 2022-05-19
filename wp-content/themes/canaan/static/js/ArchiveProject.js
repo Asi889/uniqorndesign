@@ -1,5 +1,6 @@
-export const archiveProjecteFunc = function (wrapper) {
-    // console.log({ wrapper });
+class ArchiveProject{
+    constructor(wrapper, options){
+        // console.log({ wrapper });
     let activeTags = [];
     
     const buttons = wrapper.querySelectorAll(`.project-btn`);
@@ -45,4 +46,8 @@ export const archiveProjecteFunc = function (wrapper) {
         })
 
     }
+
+    }
 }
+
+export default ArchiveProject;

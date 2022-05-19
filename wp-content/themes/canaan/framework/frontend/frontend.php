@@ -13,7 +13,8 @@ function canaan_get_menu_array($current_menu = 'Main Menu')
     $menu_array = wp_get_nav_menu_items($menuID);
     $menu = array();
     foreach ((array) $menu_array as $m) {
-        if (empty($m->menu_item_parent)) {
+     
+        if ($m && empty($m->menu_item_parent)) {
             $menu[$m->ID] = array();
             $menu[$m->ID]['ID'] = $m->ID;
             $menu[$m->ID]['title'] = $m->title;

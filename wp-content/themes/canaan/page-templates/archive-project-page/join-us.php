@@ -22,11 +22,11 @@
 
         <div class="grid text-center">
 
-            <h3 class="montserrat text-2xl lg:text-4xl font-bold text-[#212121]">
+            <h3 class="montserrat text-2xl lg:text-4xl font-bold text-superDark">
                 Learn how to talk the talk in the design world
 
             </h3>
-            <h3 class="montserrat text-2xl lg:text-4xl font-bold text-[#212121] extra2-light  text-center mx-auto px-6 mt-1 py-2">
+            <h3 class="montserrat text-2xl lg:text-4xl font-bold text-superDark extra2-light  text-center mx-auto px-6 mt-1 py-2">
 
                 Join our academy
             </h3>

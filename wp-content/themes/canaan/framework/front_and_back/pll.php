@@ -17,6 +17,11 @@ if (function_exists('pll_register_string')) {
 }
 
 
+if(!function_exists('pll_register_string')){
+    function pll_register_string($string, $string1){
+        return $string;
+    }
+}
 if(!function_exists('pll_get_post')){
     function pll_get_post($post){
         return $post;
