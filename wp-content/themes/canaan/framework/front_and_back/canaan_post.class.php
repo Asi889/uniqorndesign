@@ -172,3 +172,32 @@ class canaan_post{
      
 }
  
+
+function canaan_get_excerpt( $post, $more_link_text ='', $trim = 50)
+    {
+       
+        if (!empty ($post->post_excerpt)) {
+            $use_excerpt = $post->post_excerpt;
+        } else {
+            $use_excerpt =apply_filters('the_content', $post->post_content);
+        }
+
+        if (preg_match('/<!--more(.*?)?-->/', $use_excerpt, $matches)) {
+            $content = explode($matches [0], $use_excerpt, 2);
+            if (!empty ($matches [1])) {
+                $more_link_text = strip_tags(wp_kses_no_null(trim($matches [1])));
+            }
+            $use_excerpt = $content [0];
+        }
+
+        $text = strip_shortcodes($use_excerpt);
+        //format it
+        $text = apply_filters('the_content', $text);
+        $text = str_replace(']]>', ']]&gt;', $text);
+
+        $text = wp_trim_words($text, $trim);
+
+        $text .= $more_link_text;
+
+        return apply_filters('wp_trim_excerpt', $text, $text);
+    }

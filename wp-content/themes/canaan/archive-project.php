@@ -54,32 +54,7 @@ get_header();
 
 					foreach ($projects as $key => $p) {
 
-						$posttags = get_the_tags($p->ID);
-						$posttagsid = [];
-						foreach ($posttags as $tag) {
-							$posttagsid[] = $tag->term_id;
-						}
-
-
-						$image = wp_get_attachment_image_src(get_post_thumbnail_id($p->ID), 'thumbnail');
-
-						echo '<div data-post-tags="[' . implode(',', $posttagsid) . ']" class="project-card w-full grid max-w-[335px] lg:max-w-[436px] px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl"> ';
-						echo '<div class=" bg-[#F9F2FF] max-h-[436px]">';
-						echo get_img_html($image, true, 'full', 'h-full');
-						echo '</div>';
-						echo '<div class="pt-4 lg:pt-5">';
-						echo '<h2 class="font-bold text-xl lg:text-2xl text-[#424242]  montserrat">' . $p->post_title . '</h2>';
-						echo '<div class="flex gap-x-4 pt-3">';
-						if ($posttags) {
-							foreach ($posttags as $key => $tag) {
-								echo '<div class="text-Burgundy-400 grid content-center bg-[#FFF6FA] text-sm px-[10px] py-[2px] rounded-full montserrat max-h-8">';
-								echo $tag->name;
-								echo '</div>';
-							}
-						}
-						echo '</div>';
-						echo '</div>';
-						echo '</div>';
+						echo project_prev_cmp($p);
 					}
 					?>
 				</div>
@@ -89,12 +64,9 @@ get_header();
 
 		</div>
 
-			
-			<?php get_template_part('parts/testimonials'); ?>
 
-		<div class="flex items-center flex-wrap px-8 py-8 lg:py-20 lg:px-0 max-w-auto lg:max-w-[1879px] mx-auto   gap-y-8 gap-x-[62px] lg:gap-x-[72px] bg-[#F5F5F5] justify-center">
-			<?php get_template_part('page-templates/archive-project-page/partners'); ?>
-		</div>
+		<?php get_template_part('parts/testimonials'); ?>
+		<?php get_template_part('parts/partners-static'); ?>
 		<?php get_template_part('parts/lets-talk'); ?>
 
 

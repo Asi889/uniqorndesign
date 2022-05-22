@@ -9,65 +9,61 @@ function crb_attach_page_options()
 {
     $prefix = 'home';
     $post_template =  'page-templates/' . $prefix . '.php';
-    $metaBox = Container::make('post_meta', 'הגדרות כלליות')->where('post_template', '=', $post_template);
+    $metaBox = Container::make('post_meta', 'General')->where('post_template', '=', $post_template);
     $metaBox->add_fields(array(
-        Field::make( 'date', $prefix.'date', 'תאריך' ),
-        Field::make( 'text', $prefix.'top_subtitle', 'כותרת משנית' ),
-        Field::make('complex', $prefix . 'specialize_in', 'ההתמחות שלנו')
-        ->add_fields(array(
-            Field::make('image', 'image', 'תמונה'),
-            Field::make('text', 'title', 'כותרת'),
-            Field::make('text', 'text', 'טקסט')
-        )),
+        Field::make('text', $prefix . 'top_subtitle', 'Sub title'),
+        Field::make('complex', $prefix . 'specialize_in', 'We specialize in')
+            ->add_fields(array(
+                Field::make('image', 'image', 'Image'),
+                Field::make('text', 'title', 'title'),
+                Field::make('text', 'text', 'text')
+            )),
         Field::make('complex', $prefix . 'vision', 'מה יש לנו')
-        ->add_fields(array(
-            Field::make('image', 'image', 'תמונה'),
-            Field::make('text', 'title', 'כותרת'),
-            Field::make('text', 'text', 'טקסט')
-        )),
+            ->add_fields(array(
+                Field::make('image', 'image', 'תמונה'),
+                Field::make('text', 'title', 'כותרת'),
+                Field::make('text', 'text', 'טקסט')
+            )),
     ));
 
 
     $prefix = 'page-about';
     $post_template =   $prefix . '.php';
-    $metaBox = Container::make('post_meta', 'הגדרות כלליות')->where('post_template', '=', $post_template);
+    $metaBox = Container::make('post_meta', 'General')->where('post_template', '=', $post_template);
     $metaBox->add_fields(array(
-        Field::make( 'date', $prefix.'date', 'sdgh' ),
-        Field::make('image', $prefix . 'product_hover', 'Product hover')
-                ->set_value_type('id'),
-                Field::make('complex', $prefix . 'our_values', 'our values')
-                ->add_fields(array(
-                    Field::make('image', 'image', 'תמונת'),
-                    Field::make('text', 'title', 'כותרת'),
-                    Field::make('text', 'text', 'טקסט')
-                )),
-                Field::make('complex', $prefix . 'meet_team', 'meet the team')
-                ->add_fields(array(
-                    Field::make('image', 'image', 'תמונת'),
-                    Field::make('text', 'name', 'שם מלא'),
-                    Field::make('text', 'text', 'טקסט')
-                )),
-                Field::make('complex', $prefix . 'main_content', 'main content')
-                ->add_fields(array(
-                    Field::make('text', 'title', 'כותרת'),
-                    Field::make('text', 'text', 'טקסט')
-                )),
+        Field::make('image', $prefix . 'product_hover', 'Top Image (next to the title'),
+        Field::make('complex', $prefix . 'our_values', 'our values list')
+            ->add_fields(array(
+                Field::make('image', 'image', 'Icon'),
+                Field::make('text', 'title', 'title'),
+                Field::make('textarea', 'text', 'short text')
+            ))
+            ->set_layout('tabbed-vertical')
+            ->set_header_template(' <% if (title) { %>  <%- title %> <% } %> '),
+        Field::make('complex', $prefix . 'meet_team', 'meet the team')
+            ->add_fields(array(
+                Field::make('image', 'image', 'Profile image'),
+                Field::make('text', 'name', 'Full name'),
+                Field::make('text', 'text', 'Role and job')
+            ))
+            ->set_layout('tabbed-vertical')
+            ->set_header_template(' <% if (name) { %>  <%- name %> <% } %> '),
+
     ));
 
 
     $prefix = 'contact_';
     $post_template =  'page-templates/' . $prefix . '.php';
-    $metaBox = Container::make('post_meta', 'הגדרות כלליות')->where('post_template', '=', $post_template);
+    $metaBox = Container::make('post_meta', 'General')->where('post_template', '=', $post_template);
     $metaBox->add_fields(array(
-        Field::make( 'date', $prefix.'date', 'תאריך' ),
+        // Field::make('date', $prefix . 'date', 'תאריך'),
     ));
-
-
 }
 
 
 // add_action('carbon_fields_{container_type}_container_saved', 'crb__post_meta_container_save');
 add_action('carbon_fields_post_meta_container_saved', 'crb__post_meta_container_save');
 
-function crb__post_meta_container_save(){
+function crb__post_meta_container_save()
+{
 }

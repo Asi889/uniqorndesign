@@ -4,21 +4,31 @@ defined('ABSPATH') || die();
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
+		<?php if (have_posts()) : ?>
 
 			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
+				<h1 class="page-title">
+					<span>
+						<?= pll__("Let's talk about"); ?>
+						&nbsp;
+					</span>
+					<?php
+					the_archive_title('<span>', '</span>');
+					?>
 			</header><!-- .page-header -->
+			<article>
 
-			<?php
+				<?php
+				the_archive_description('<div class="archive-description">', '</div>');
+				?>
+			</article>
+
+		<?php
 			/* Start the Loop */
-			while ( have_posts() ) :
+			while (have_posts()) :
 				the_post();
 
 				/*
@@ -26,7 +36,7 @@ get_header();
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part('template-parts/content', get_post_type());
 
 			endwhile;
 
@@ -34,13 +44,13 @@ get_header();
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part('template-parts/content', 'none');
 
 		endif;
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_footer();

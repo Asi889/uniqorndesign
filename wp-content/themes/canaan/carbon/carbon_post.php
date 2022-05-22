@@ -79,26 +79,4 @@ function crb_attach_post_options()
     );
 
 
-    $post_type = 'datatags';
-
-    $prefix = 'datatags_';
-    $metaBox = Container::make('post_meta', 'General Settings');
-    $metaBox->where('post_type', '=', $post_type);
-    $metaBox->add_fields(
-        array(
-
-            Field::make('complex', $prefix . 'what_is', 'מה התגית')
-                ->add_fields(array(
-                    Field::make('text', 'title', 'כותרת'),
-                    Field::make('text', 'text', 'טקסט')
-                )),
-            Field::make('complex', $prefix . 'subject_projects_info', 'עוד מידע אודות')
-                ->add_fields(array(
-                    Field::make('text', 'title', 'כותרת'),
-                    Field::make('text', 'text', 'טקסט')
-                )),
-                Field::make('text', $prefix . 'type', 'סוג תגית'),
-
-        )
-    );
 }

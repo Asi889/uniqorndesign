@@ -20,7 +20,7 @@ function singleSwipe($testimonial)
     $company = carbon_get_post_meta($testimonial->ID, $prefix . 'company');
     $sub_text = carbon_get_post_meta($testimonial->ID, $prefix . 'sub_text');
 
-    echo '<div class=" px-6 lg:px-[100px] py-6 lg:py-12 bg-[#EEEEEE] w-fit mx-auto rounded-md">';
+    echo '<div class=" px-6 lg:px-[100px] py-6 lg:py-12 bg-white w-fit mx-auto rounded-md border border-[#EEEEEE]">';
     echo '<div class="flex gap-x-0 lg:gap-x-8">';
     echo '<div class="testimonials-portrait-img">'; //
     echo get_img_html($thumb);
@@ -53,20 +53,20 @@ function singleSwipe($testimonial)
 <section class=" bg-[#F4FFF7]  pb-8 lg:pb-[60px] lg:py-20">
 
     <div class="max-w-7xl mx-auto px-4">
-        <h4 class="text-4xl lg:text-5xl leading-[58px] text-green-600 montserrat max-w-[842px] font-bold  ">
+        <h3 class="text-4xl lg:text-5xl leading-[58px] text-green-600 montserrat max-w-[842px] font-bold  ">
             <?= carbon_get_theme_option('misc_testimonials_title'); ?>
-        </h4>
+        </h3>
 
     </div>
 
     <div class="swiper testimonials-swiper pt-8 max-w-[820px] mx-auto lg:pt-20 <?= count($testimonials) > 1 ? 'testimonials-swiper-js' : ''; ?>">
 
         <div class=" gap-x-3 mb-4 justify-end  <?= count($testimonials) > 1 ? 'flex' : 'hidden'; ?>">
-            <button class="swiper-button-next-js grid place-content-center bg-[#EEEEEE] hover:opacity-60 transition-opacity px-6 py-6 rounded-full rotate-180 border-[1px] border-[#d8d4d4] z-10 w-11 h-11">
+            <button class="swiper-button-next-js grid place-content-center bg-white hover:opacity-60 transition-opacity px-6 py-6 rounded-full rotate-180 border border-[#EEEEEE] z-10 w-11 h-11">
                 <span class="sr-only"><?= pll__('Next') ;?></span>
                 <?= get_svg('arrow-right'); ?>
             </button>
-            <button class="swiper-button-prev-js grid place-content-center bg-[#EEEEEE] hover:opacity-60 transition-opacity px-6 py-6 rounded-full rotate-180 border-[1px] border-[#d8d4d4] z-10 w-11 h-11">
+            <button class="swiper-button-prev-js grid place-content-center bg-white hover:opacity-60 transition-opacity px-6 py-6 rounded-full rotate-180 border border-[#EEEEEE] z-10 w-11 h-11">
                 <span class="sr-only"><?= pll__('Prev') ;?></span>
                 <?= get_svg('arrow-left'); ?>
 
@@ -81,7 +81,7 @@ function singleSwipe($testimonial)
 
             foreach ($testimonials as $key => $testimonial) {
 
-                echo '<li class="swiper-slide montserrat">'; //
+                echo '<li class="swiper-slide">'; //
                 singleSwipe($testimonial);
                 echo '</li>';
             }

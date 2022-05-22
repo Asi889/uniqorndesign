@@ -13,7 +13,7 @@
                     <?php get_template_part('static/svgs/contact-page/whatsapp-mobile-icon'); ?>
                 </div>
 
-                <p class="text-base lg:text-2xl font-semibold pl-[10px] text-[#FFF6FA]">Whatsapp</p>
+                <p class="text-base lg:text-2xl font-semibold pl-[10px] text-[#FFF6FA]"><?= pll__('Whatsapp') ;?></p>
             </a>
             <a class="flex items-center" href="">
                 <div class="hidden lg:flex items-center pt-2 lg:pt-4">

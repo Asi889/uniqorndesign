@@ -1,14 +1,12 @@
 // Base: animations, base, typography, and utilies.
-@import './scss/base/_typography.scss';
-@import './scss/base/_global.scss';
-@import './scss/base/swiper.scss';
-
-
+@import "./scss/base/_typography.scss";
+@import "./scss/base/_global.scss";
+@import "./scss/base/swiper.scss";
 
 // Layout: Header, footer, grid, navigation
 // @import './scss/layout/_footer.scss';
-@import './scss/layout/_navbar.scss';
-@import './scss/layout/_header.scss';
+@import "./scss/layout/_navbar.scss";
+@import "./scss/layout/_header.scss";
 
 // Pages: Have a single scss for each specific page
 
@@ -17,48 +15,44 @@
 // Vendor: handles 3rd party css
 
 // Components: have a single scss file for each individual component
-@import './scss/components/_nemo-hover.scss';
+@import "./scss/components/_nemo-hover.scss";
 
-
-.montserrat{
-    font-family: 'Montserrat', sans-serif;
+.montserrat {
+    font-family: "Montserrat", sans-serif;
 }
 
-.rubik{
-    font-family: 'Rubik', sans-serif;
+.rubik {
+    font-family: "Rubik", sans-serif;
 }
 
-.gardientGreen{
-    background: linear-gradient(252.37deg, #FDA14C 33.76%, #42CD60 74.9%);
+.gardientGreen {
+    background: linear-gradient(252.37deg, #fda14c 33.76%, #42cd60 74.9%);
     opacity: 0.4;
 }
 
-.letsTalkGardient{
+.letsTalkGardient {
     background: linear-gradient(95.34deg, rgba(232, 196, 254, 0.4) -0.51%, rgba(253, 195, 220, 0.4) 128.64%);
-    border-radius: 16px;        
-
+    border-radius: 16px;
 }
-.letsTalkGardient-archive{
+.letsTalkGardient-archive {
     background: linear-gradient(95.34deg, rgba(232, 196, 254, 0.4) -0.51%, rgba(253, 195, 220, 0.4) 128.64%);
-         
-
 }
-.letsTalkTitle{
-    background: linear-gradient(95.34deg, #8803DA -0.51%, #D4055C 128.64%);
+.letsTalkTitle {
+    background: linear-gradient(95.34deg, #8803da -0.51%, #d4055c 128.64%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font: transparent;
 }
-.logo-links img{
+.logo-links img {
     width: 16px;
     height: 16px;
 }
-.extra2-light{
+.extra2-light {
     background: rgb(252, 185, 32, 0.6);
 }
 
-.border-1{
+.border-1 {
     border: 1px solid;
 }
 
@@ -66,61 +60,77 @@
     background-color: red;
 }
 
-.green-gradient{
-    background: linear-gradient(95.34deg, #C0EECA -0.51%, #8EBFFF 128.64%);
+.green-gradient {
+    position: relative;
+    background: linear-gradient(95.34deg, #c0eeca -0.51%, #8ebfff 128.64%);
+    &::after {
+        content: "";
+        width: 100%;
+        height: 80px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0 0 100% 100%;
+        z-index: 2;
+        background: linear-gradient(95.34deg, #c0eeca -0.51%, #8ebfff 128.64%);
+        transform: translateY(100%);
+        clip-path: ellipse(52% 115% at 48.83% -18.75%);
+    }
 }
 
-.liner-text{
-    background: linear-gradient(89.98deg, #268E3C -5.27%, #002352 126.26%);
+.liner-text {
+    background: linear-gradient(89.98deg, #268e3c -5.27%, #002352 126.26%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
 }
-.liner-blue-green-text{
-    background: linear-gradient(89.6deg, #268E3C 25.2%, #005AD1 92.11%);
+.liner-blue-green-text {
+    background: linear-gradient(89.6deg, #268e3c 25.2%, #005ad1 92.11%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
 }
-
 
 .portfolioDisc {
-	width: 100%;
+    width: 100%;
     height: 0px;
     // height: calc(100vh - 52px);
-	// padding-top: 0px;
+    // padding-top: 0px;
     // overflow: auto;
     -webkit-transition: all 0.4s linear;
     -moz-transition: all 0.4s linear;
     -o-transition: all 0.4s linear;
     transition: all 0.4s linear;
     // margin-top: 300px;
-	position: relative;
-	// background-color:#000;
-	font-size: 15px;
-	line-height: 18px;
-	text-align:center;
-	// color: #FFF;
+    position: relative;
+    // background-color:#000;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    // color: #FFF;
     // background-color: rgb(251 207 232 / var(--tw-bg-opacity));
 }
 
 .anim:active .portfolioDisc {
-	// margin-top:221px;
-    height:69px;
-	// padding-top: 10px;
-	
+    // margin-top:221px;
+    height: 69px;
+    // padding-top: 10px;
 }
-.hamburger1{
+.hamburger1 {
     display: none;
 }
 
-.testimonials_text{
+.testimonials_text {
     display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      height: auto;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: auto;
+}
 
+img[src*=".svg"] {
+    width: 100%;
 }

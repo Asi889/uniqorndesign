@@ -1,7 +1,7 @@
 
 import Swiper, { Navigation } from 'swiper';
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/swiper.min.css'
+// import 'swiper/swiper-bundle.min.css'
+// import 'swiper/swiper.min.css'
 Swiper.use([Navigation]);
 
 class TestimonialsSwiper{

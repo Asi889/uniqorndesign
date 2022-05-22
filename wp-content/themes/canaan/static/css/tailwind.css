@@ -18,6 +18,9 @@ article.prose{
 body article.prose *{
     font-family: inherit;
 }
+body article.archive-description.prose{
+    max-width: 730px;
+}
 body article.prose h1,
 body article.prose h2,
 body article.prose h3,

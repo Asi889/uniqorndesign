@@ -6,9 +6,17 @@ import Hamburger from './Hamburger';
 import ContactUsForm from './ContactUsForm';
 import ArchiveProject from './ArchiveProject';
 import TestimonialsSwiper from './TestimonialsSwiper';
+import PartnersSwiper from './PartnersSwiper';
 
 
 const components = [
+  {
+    Class: PartnersSwiper,
+    selector: '.partners-gallery-swiper-js',
+    options: {
+      className:'.partners-gallery-swiper-js'
+    },
+  },
   {
     Class: TestimonialsSwiper,
     selector: '.testimonials-swiper',

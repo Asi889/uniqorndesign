@@ -20,11 +20,11 @@ add_action('init', 'canaan_register_post_types_cb');
 function canaan_register_post_types_cb()
 {
 
-	$args = get_register_taxonomy_args('writer name','writer','category',['menu_icon' => 'dashicons-carrot',],'s');
-	register_taxonomy( $args['rewrite']['slug'],$args['rewrite']['slug'], $args );
-	$args = get_register_taxonomy_args('tags','tags');
-	register_taxonomy( $args['rewrite']['slug'],$args['rewrite']['slug'], $args );
-	register_taxonomy_for_object_type('writer','post','tags');
+	$args = get_register_taxonomy_args('writer name', 'writer', 'category', ['menu_icon' => 'dashicons-carrot',], 's');
+	register_taxonomy($args['rewrite']['slug'], $args['rewrite']['slug'], $args);
+	$args = get_register_taxonomy_args('tags', 'tags');
+	register_taxonomy($args['rewrite']['slug'], $args['rewrite']['slug'], $args);
+	register_taxonomy_for_object_type('writer', 'post', 'tags');
 
 	$args = get_register_post_type_args(
 		'Lead',
@@ -43,26 +43,28 @@ function canaan_register_post_types_cb()
 		'article',
 		[
 			'menu_icon' => 'dashicons-pressthis',
-			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail','excerpt'],
-		'taxonomies'=>['post_tag','writer', 'category'],
+			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail', 'excerpt'],
+			'taxonomies' => ['post_tag', 'writer', 'category'],
 			'show_in_rest' => true,
 		],
 		's'
 	);
 	register_post_type($args['rewrite']['slug'], $args);
+	register_taxonomy_for_object_type('article', 'post', 'category');
 
 	$args = get_register_post_type_args(
 		'Project',
 		'project',
 		[
 			'menu_icon' => 'dashicons-format-aside',
-			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail','excerpt'],
-		'taxonomies'=>['post_tag','writer', 'category'],
+			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail', 'excerpt'],
+			'taxonomies' => ['post_tag', 'writer', 'category'],
 			'show_in_rest' => true,
 		],
 		's'
 	);
 	register_post_type($args['rewrite']['slug'], $args);
+	register_taxonomy_for_object_type('project', 'post', 'category');
 
 	$args = get_register_post_type_args(
 		'Testimonials',
@@ -75,18 +77,7 @@ function canaan_register_post_types_cb()
 		's'
 	);
 	register_post_type($args['rewrite']['slug'], $args);
-	
-	$args = get_register_post_type_args(
-		'Datatags',
-		'datatags',
-		[
-			'menu_icon' => 'dashicons-format-quote',
-			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail','excerpt'],
-			'show_in_rest' => true,
-		],
-		's'
-	);
-	register_post_type($args['rewrite']['slug'], $args);
+
 }
 /**
  * canaan: get defuelt vals for register a post type.

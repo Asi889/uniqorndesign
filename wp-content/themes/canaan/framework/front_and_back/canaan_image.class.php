@@ -2,22 +2,25 @@
 defined('ABSPATH') || die();
 
 
-function get_img_html($p, $lazy= true, $size='full'){
+function get_img_html($p, $lazy = true, $size = 'full', $class = '')
+{
 
-    $img= new canaan_image($p, $size);
-    
-    if(!$img || !$img->isValid()) return;
-    if($lazy){
+    $img = new canaan_image($p, $size);
+
+    if (!$img || !$img->isValid()) return;
+    if ($lazy) {
         // return '<img loading="lazy" data-src="'.$img->get_sized_url().'" class="lazyload" width="'.$img->get_width().'" height="'.$img->get_height().'" alt="'.esc_attr( $img->get_alt()).'">';
-        return $img->get_img_html($size, $lazy);
-    } else{
-        return '<img  src="'.$img->get_sized_url($size).'" alt="'.esc_attr( $img->get_alt()).'" >';
+        return $img->get_img_html($size, $lazy, $class);
+    } else {
+        return '<img  src="' . $img->get_sized_url($size) . '" alt="' . esc_attr($img->get_alt()) . '"  title="' . esc_attr($img->get_caption()) . '" class=" ' . $class . '">';
     }
 }
-function get_img_src($id, $size ='full'){
-    $img= new canaan_image($id, $size);
-    if(!$img) return;
-    return $img->get_sized_url($size);
+function get_img_src($id, $size = 'full')
+{
+
+    $img = new canaan_image($id, $size);
+    if (!$img || !$img->isValid()) return;
+    return $img->get_url($size);
 }
 
 class canaan_image
@@ -35,7 +38,7 @@ class canaan_image
 
     function __construct($img_id, $size = 'full')
     {
-        
+
         $img_id = (int)$img_id;
         if (is_numeric($img_id)) {
             $img_ind = (int)$img_id;
@@ -50,7 +53,7 @@ class canaan_image
             $img = wp_get_attachment_image_src($this->ID, $size);
             if ($img === false) {
                 $pst = get_post($img_id);
-                if ($pst->post_type == 'attachment' && $pst->post_mime_type == 'application/pdf') {
+                if ($pst && $pst->post_type == 'attachment' && $pst->post_mime_type == 'application/pdf') {
                     $this->src_full = wp_get_attachment_url($img_id);
                 }
                 if ($this->src_full !== false) {
@@ -88,6 +91,11 @@ class canaan_image
         }
     }
 
+    public function get_url($size)
+    {
+
+        return $this->src_full;
+    }
     public function get_sized_url($width = false, $height = false)
     {
         if ($this->src_full == false || empty($this->src_full)) {
@@ -107,7 +115,7 @@ class canaan_image
         }
 
         if (preg_match('/(.*).(jpg|png)\z/', $this->src_full, $matches) && count($matches) == 3) {
-            return $matches[1].'_wo_'.$width.'_'.$height.'.'.$matches[2];
+            return $matches[1] . '_wo_' . $width . '_' . $height . '.' . $matches[2];
         }
 
         return $this->src_full;
@@ -158,11 +166,10 @@ class canaan_image
         if (is_array($this->metaData) && key_exists('_wp_attachment_image_alt', $this->metaData)) {
             return $this->metaData['_wp_attachment_image_alt'][0];
         }
-        if (isset( $this->title)) {
+        if (isset($this->title) && $this->title) {
             return $this->title;
         }
 
-   
         return false;
     }
     public function get_url_originalImage()
@@ -170,15 +177,15 @@ class canaan_image
         return $this->src_full;
     }
 
-    public function get_img_tag_by_size($size_slug, $lazy=true)
+    public function get_img_tag_by_size($size_slug, $lazy = true)
     {
 
-       $img=wp_get_attachment_image_src($this->ID, $size_slug);
+        $img = wp_get_attachment_image_src($this->ID, $size_slug);
 
-            if ($img===false || !is_array($img))
-                    $url= $this->src_full;
-            else
-                    $url= $img[0];		
+        if ($img === false || !is_array($img))
+            $url = $this->src_full;
+        else
+            $url = $img[0];
 
 
         if ($url == false) {
@@ -188,23 +195,22 @@ class canaan_image
         $alt = $this->get_alt();
         $title = $this->get_title();
 
-        $html = '<img '.($lazy ? 'loading="lazy" ' : '').' src="'.esc_attr($url).'" ';
-        if (!empty ($addClass)) {
-            $html .= ' class="'.$addClass.'" ';
+        $html = '<img ' . ($lazy ? 'loading="lazy" ' : '') . ' src="' . esc_attr($url) . '" ';
+        if (!empty($addClass)) {
+            $html .= ' class="' . $addClass . '" ';
         }
 
-        if ($alt != false && !empty ($alt)) {
-            $html .= ' alt="'.esc_attr($alt).'" ';
+        if ($alt != false && !empty($alt)) {
+            $html .= ' alt="' . esc_attr($alt) . '" ';
         }
 
 
         $html .= ' />';
 
         return $html;
-
     }
 
-    public function get_img_tag_sized($width = false, $height = false, $addClass = '', $islazey=false)
+    public function get_img_tag_sized($width = false, $height = false, $addClass = '', $islazey = false)
     {
 
         $url = $this->get_sized_url($width, $height);
@@ -216,49 +222,61 @@ class canaan_image
         $alt = $this->get_alt();
         $title = $this->get_title();
 
-        $html = '<img src="'.esc_attr($url).'" ';
-        if (!empty ($addClass)) {
-            $html .= ' class="'.$addClass.'" ';
+        $html = '<img src="' . esc_attr($url) . '" ';
+        if (!empty($addClass)) {
+            $html .= ' class="' . $addClass . '" ';
         }
 
-        if ($alt != false && !empty ($alt)) {
-            $html .= ' alt="'.esc_attr($alt).'" ';
+        if ($alt != false && !empty($alt)) {
+            $html .= ' alt="' . esc_attr($alt) . '" ';
         }
 
-        $html .= ' '.($islazey ? 'loading="lazy" ' : '').' />';
+        $html .= ' ' . ($islazey ? 'loading="lazy" ' : '') . ' />';
 
         return $html;
-
     }
 
-    public function get_img_html($size_slug = 'full', $lazy = true){
+    public function get_img_html($size_slug = 'full', $lazy = true, $class = '')
+    {
         $img = wp_get_attachment_image_src($this->ID, $size_slug);
-        
+
         if ($img === false || !is_array($img)) {
             $url = $this->src_full;
         } else {
             $url = $img[0];
         }
 
+        $is_gif = str_ends_with(basename($url), '.gif');
+        if ($is_gif) {
+            $img = wp_get_attachment_image_src($this->ID, 'full');
+            $url = $img[0];
+        }
+
+
+
         $alt = $this->get_alt();
         $title = $this->get_title();
         $caption = $this->get_caption();
 
         $html = '';
-        $html .= '<img src="'.esc_attr($url).'" ';
-        if ($alt != false && !empty ($alt)) {
-            $html .= ' alt="'.esc_attr($alt).'" ';
+        $html .= '<img src="' . esc_attr($url) . '" ';
+        if ($alt != false && !empty($alt)) {
+            $html .= ' alt="' . esc_attr($alt) . '" ';
+        } else {
+            $html .= ' alt="' . esc_attr($title) . '" ';
         }
-      
-        $html .= ' width="'.$this->get_width().'" height="'.$this->get_height().'"';
 
-        $html .= ' '.($lazy ? 'loading="lazy" ' : '').' />';
+        $html .= ' width="' . $this->get_width() . '" height="' . $this->get_height() . '"';
+
+        $html .= ' title="' . esc_attr($caption) . '"';
+        $html .= ' class=" ' . $class . '"';
+        $html .= ' ' . ($lazy ? 'loading="lazy" ' : '') . ' />';
 
 
 
         return $html;
     }
-    public function get_html_sized_wcaption($size_slug = null, $addClass ='', $islazey = false)
+    public function get_html_sized_wcaption($size_slug = null, $addClass = '', $islazey = false)
     {
 
         $img = wp_get_attachment_image_src($this->ID, $size_slug);
@@ -278,23 +296,23 @@ class canaan_image
             $html .= '<div class="img_w_caption">';
         }
 
-        $html .= '<img src="'.esc_attr($url).'" ';
-        if (!empty ($addClass)) {
-            $html .= ' class="'.$addClass.'" ';
+        $html .= '<img src="' . esc_attr($url) . '" ';
+        if (!empty($addClass)) {
+            $html .= ' class="' . $addClass . '" ';
         }
 
-        if ($alt != false && !empty ($alt)) {
-            $html .= ' alt="'.esc_attr($alt).'" ';
+        if ($alt != false && !empty($alt)) {
+            $html .= ' alt="' . esc_attr($alt) . '" ';
         }
 
 
-        $html .= ' '.($islazey ? 'loading="lazy" ' : '').' />';
+        $html .= ' ' . ($islazey ? 'loading="lazy" ' : '') . ' />';
 
         $html .= ' />';
 
 
         if (mb_strlen($caption)) {
-            $html .= '<p class="img_caption_gen">'.$caption.'</p></div>';
+            $html .= '<p class="img_caption_gen">' . $caption . '</p></div>';
         }
 
 
@@ -303,4 +321,63 @@ class canaan_image
 }
 
 
+function canaan_add_image_sizes()
+{
+    add_theme_support('post-thumbnails');
+    // add_image_size('1920X580', 1920, 580, true);
+    $images = [
+        ['name' => '424X250', 'crop' => false],
+        ['name' => '445X256', 'crop' => false]
+    ];
+    foreach ($images as $key => $img) {
+        $sizes = explode('X', $img['name']);
+        add_image_size($img['name'], $sizes[0], $sizes[1], $img['crop']);
+    }
+}
+add_action('after_setup_theme', 'canaan_add_image_sizes');
 
+
+
+
+/*
+ * Allow SVG uploads
+ */
+function add_mime_types($mimes)
+{
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'add_mime_types');
+// Allow SVG
+add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
+
+    global $wp_version;
+    if ( $wp_version !== '4.7.1' ) {
+       return $data;
+    }
+  
+    $filetype = wp_check_filetype( $filename, $mimes );
+  
+    return [
+        'ext'             => $filetype['ext'],
+        'type'            => $filetype['type'],
+        'proper_filename' => $data['proper_filename']
+    ];
+  
+  }, 10, 4 );
+  
+  function cc_mime_types( $mimes ){
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+  }
+  add_filter( 'upload_mimes', 'cc_mime_types' );
+  
+  function fix_svg() {
+    echo '<style type="text/css">
+          .attachment-266x266, .thumbnail img {
+               width: 100% !important;
+               height: auto !important;
+          }
+          </style>';
+  }
+  add_action( 'admin_head', 'fix_svg' );
