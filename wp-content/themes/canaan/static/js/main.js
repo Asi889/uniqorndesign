@@ -7,6 +7,7 @@ import ContactUsForm from './ContactUsForm';
 import ArchiveProject from './ArchiveProject';
 import TestimonialsSwiper from './TestimonialsSwiper';
 import PartnersSwiper from './PartnersSwiper';
+import LoadMore from './LoadMore';
 
 
 const components = [
@@ -16,6 +17,11 @@ const components = [
     options: {
       className:'.partners-gallery-swiper-js'
     },
+  },
+  {
+    Class: LoadMore,
+    selector: '.load-more-project-js',
+    options: {},
   },
   {
     Class: TestimonialsSwiper,

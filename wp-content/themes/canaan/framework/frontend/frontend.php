@@ -136,7 +136,7 @@ function article_prev_cmp(WP_Post $p)
 
 
 
-function project_prev_cmp($p)
+function project_prev_cmp(WP_Post $p, $key = 0)
 {
     $html ='';
     $posttags = get_the_tags($p->ID);
@@ -146,12 +146,23 @@ function project_prev_cmp($p)
             $posttagsid[] = $tag->term_id;
         }
     }
+    $class ='project-card w-full grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl';
+    $halfGrid =[3,4];
+    $towThird =[6,9];
+    if(in_array($key, $halfGrid)){
+        $class .= ' col-span-6';
+    } elseif(in_array($key, $towThird)){
+        $class .= '  col-span-8';
+    } else {
+        $class .= ' max-w-[335px] lg:max-w-[436px] col-span-4';
+    }
+    
 
-    $image = wp_get_attachment_image_src(get_post_thumbnail_id($p->ID), 'thumbnail');
+    $image = get_post_thumbnail_id($p->ID,);
 
-    $html .= '<div data-post-tags="[' . implode(',', $posttagsid) . ']" class="project-card w-full grid max-w-[335px] lg:max-w-[436px] px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl"> ';
+    $html .= '<div data-post-tags="[' . implode(',', $posttagsid) . ']" class="' . $class . '">';
     $html .= '<div class=" bg-[#F9F2FF] h-[436px]">';
-    $html .= get_img_html($image, true, 'full', 'h-full');
+    $html .= get_img_html($image, true, 'full', 'h-full w-full object-cover');
     $html .= '</div>';
     $html .= '<div class="pt-4 lg:pt-5">';
     $html .= '<h2 class="font-bold text-xl lg:text-2xl text-[#424242]  montserrat">' . $p->post_title . '</h2>';

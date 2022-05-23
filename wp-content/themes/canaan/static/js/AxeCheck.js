@@ -1,7 +1,6 @@
 import axe from "axe-core";
 class AxeCheck {
   constructor(el, options) {
-      console.log(el);
     axe
       .run()
       .then((results) => {

@@ -30,15 +30,8 @@ get_header();
 					<?php
 					$terms = get_terms(array(
 						'taxonomy' => 'post_tag',
-						// 'hide_empty' => false,
 					));
 					foreach ($terms as $key => $t) {
-						// print_r($t);
-						// die;
-						// $all_tags = get_the_tags($pp->ID);
-
-
-						// print_r($t->name);
 						echo '<button data-tag-id="' . $t->term_id . '" href="" class="project-btn text-Burgundy-400 grid content-center border-1 border-solid  border-Burgundy-400 active:bg-blue-400  text-sm lg:text-2xl lg:leading-none px-2 lg:px-4 h-[52px]  rounded-full montserrat">';
 						echo $t->name;
 						echo '</button>';
@@ -46,19 +39,22 @@ get_header();
 					?>
 				</div>
 
+				<section class="load-more-project-js flex flex-col">
 
-				<div class=" flex flex-wrap gap-x-5  mt-5 lg:mt-5">
-					<!-- <div class=" grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-10 lg:gap-y-20 px-0 lg:px-3 pt-5 lg:pt-5 mt-5 lg:mt-5"> -->
+				<div class="grid gap-x-5 gap-y-20  mt-5 lg:mt-5  lg:grid-cols-12"  data-project-grid="true">
+
 					<?php
-
-
 					foreach ($projects as $key => $p) {
-
-						echo project_prev_cmp($p);
+						echo project_prev_cmp($p, $key);
 					}
 					?>
+
 				</div>
-				<a class=" block lg:hidden max-w-[111px] ml-4  py-4 px-4 bg-Burgundy-400 text-[#FFF6FA] text-base lg:text-2xl font-semibold montserrat rounded-md justify-self-center mt-10" href="">See more</a>
+				<button  data-project-button="true" class=" w-auto mx-auto  py-4 px-4 bg-blue-400 hover:bg-blue-600 transition active:bg-blue-200 text-white text-base lg:text-2xl font-semibold montserrat rounded-md justify-self-center mt-10">
+					<?= pll__('See more') ;?>
+				</button>
+				</section>
+
 			</div>
 
 
@@ -73,4 +69,7 @@ get_header();
 	</main>
 </div>
 <?php
+
+echo '<script>__mainData.loadMore= true;;__mainData.postType="' . $post->post_type . '"</script>';
+
 get_footer();
