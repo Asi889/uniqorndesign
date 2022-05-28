@@ -8,11 +8,11 @@ $contact_page_link = get_page_by_path('/contact');
             <div class="text-4xl lg:text-5xl leading-[48px] lg:leading-[58px] font-bold montserrat text-green-600 "><?= pll__('Our studio is all about'); ?></div>
             <div class="text-4xl lg:text-5xl leading-[48px] lg:leading-[58px] font-bold montserrat liner-text"><?= pll__('products that people love'); ?></div>
         </h1>
-        <div class="">
-            <a class="rounded-md text-white font-semibold text-base lg:text-2xl montserrat bg-green-500 px-4 lg:px-6 py-2 lg:py-3 " href="<?php echo get_page_link($contact_page_link); ?>"><?= pll__("Let's talk"); ?></a>
+        <div class="pt-10 lg:pt-0">
+            <a class="rounded-md text-white font-semibold text-base lg:text-2xl montserrat bg-green-500 hover:bg-green-600 focus:bg-green-500 focus:shadow-2xl transition duration-300 px-4 lg:px-6 py-2 lg:py-3 " href="<?php echo get_page_link($contact_page_link); ?>"><?= pll__("Let's talk"); ?></a>
         </div>
 
-        <div class="">
+        <div class="pt-16 lg:pt-0">
 
             <?php
 

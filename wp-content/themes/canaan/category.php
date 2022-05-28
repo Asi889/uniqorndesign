@@ -22,10 +22,10 @@ get_header();
 					<span>
 						<?= $term->name ?>
 					</span>
-			</header><!-- .page-header -->
-			<?php
+			</header>
+			<!-- <?php
 			the_archive_description('<article class="archive-description prose  py-16 mr-auto">', '</article>');
-			?>
+			?> -->
 		</div>
 
 

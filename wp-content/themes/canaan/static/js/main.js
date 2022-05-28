@@ -5,6 +5,7 @@ import AxeCheck from './AxeCheck';
 import Hamburger from './Hamburger';
 import ContactUsForm from './ContactUsForm';
 import ArchiveProject from './ArchiveProject';
+import MagicFilter from './MagicFilter';
 import TestimonialsSwiper from './TestimonialsSwiper';
 import PartnersSwiper from './PartnersSwiper';
 import LoadMore from './LoadMore';
@@ -28,9 +29,14 @@ const components = [
     selector: '.testimonials-swiper',
     options: {},
   },
+  // {
+  //   Class: ArchiveProject,
+  //   selector: '.archive-project-wrapper',
+  //   options: {},
+  // },
   {
-    Class: ArchiveProject,
-    selector: '.archive-project-wrapper',
+    Class: MagicFilter,
+    selector: '.magic-filter-wrapper',
     options: {},
   },
   {

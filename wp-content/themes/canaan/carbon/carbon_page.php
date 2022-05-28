@@ -52,10 +52,14 @@ function crb_attach_page_options()
     ));
 
 
-    $prefix = 'contact_';
+    $prefix = 'page-contact';
     $post_template =  'page-templates/' . $prefix . '.php';
     $metaBox = Container::make('post_meta', 'General')->where('post_template', '=', $post_template);
     $metaBox->add_fields(array(
+        Field::make('textarea', 'phone_number', 'Phone number'),
+        Field::make('textarea', 'email', 'Email'),
+        Field::make('textarea', 'whatsup', 'Whatsup'),
+        Field::make('rich_text', 'message_sent', 'message sent text')
         // Field::make('date', $prefix . 'date', 'תאריך'),
     ));
 }

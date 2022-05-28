@@ -46,4 +46,9 @@ function crb_attach_theme_options()
         Field::make('text', $prefix . 'lets_talk_link', 'Lets Talk Link')->set_attribute('type', 'url'),
         Field::make('textarea', $prefix . 'lets_talk_text', 'Lets Talk text'),
     ]);
+    $metaBox->add_tab('Join Us', [
+        Field::make('text', $prefix . 'join_us__link', 'Join Us Link')->set_attribute('type', 'url'),
+        Field::make('textarea', $prefix . 'joun_us_top_text', 'Join us Top text'),
+        Field::make('textarea', $prefix . 'joun_us_bottom_text', 'Join us Bottom text (Join our academy)'),
+    ]);
 }

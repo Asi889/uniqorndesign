@@ -34,6 +34,7 @@
     background: linear-gradient(95.34deg, rgba(232, 196, 254, 0.4) -0.51%, rgba(253, 195, 220, 0.4) 128.64%);
     border-radius: 16px;
 }
+
 .letsTalkGardient-archive {
     background: linear-gradient(95.34deg, rgba(232, 196, 254, 0.4) -0.51%, rgba(253, 195, 220, 0.4) 128.64%);
 }
@@ -56,9 +57,22 @@
     border: 1px solid;
 }
 
-.btn-active.project-btn {
-    background-color: red;
+
+.project-btn.category-btn-active{
+    background-color:#F9F2FF
+
 }
+.project-btn.term-btn-active{
+    background-color:#E8F2FF;
+}
+.project-btn.all-btn-active{
+    background-color:red
+}
+.check-mark-remove{
+    display:none;
+}
+
+
 
 .green-gradient {
     position: relative;

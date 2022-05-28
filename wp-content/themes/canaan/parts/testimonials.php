@@ -1,12 +1,13 @@
 <?php
 $prefix = 'testimonials_';
-global $posts;
 
 $testimonials = get_posts_transiet([
     'post_type' => 'testimonials',
     'posts_per_page' => -1,
 
 ], 'testimonials_posts');
+
+
 if (!$testimonials || empty($testimonials)) {
     return;
 }
@@ -20,29 +21,29 @@ function singleSwipe($testimonial)
     $company = carbon_get_post_meta($testimonial->ID, $prefix . 'company');
     $sub_text = carbon_get_post_meta($testimonial->ID, $prefix . 'sub_text');
 
-    echo '<div class=" px-6 lg:px-[100px] py-6 lg:py-12 bg-white w-fit mx-auto rounded-md border border-[#EEEEEE]">';
+    echo '<div class=" px-5 lg:px-[100px] py-8 lg:py-12 bg-white w-fit mx-auto rounded-md border border-[#EEEEEE] montserrat">';
     echo '<div class="flex gap-x-0 lg:gap-x-8">';
-    echo '<div class="testimonials-portrait-img">'; //
+    echo '<div class="testimonials-portrait-img">'; 
     echo get_img_html($thumb);
-    echo '</div>'; //
+    echo '</div>';
 
-    echo '<div class=" grid content-end">'; //
+    echo '<div class=" grid content-end">'; 
     echo '<h4 class="text-xl lg:text-2xl font-bold text-[#424242]">' . $title . '</h4>';
-    echo '<div class="flex gap-x-1">'; //
+    echo '<div class="flex gap-x-1">';
     echo '<p class="text-sm lg:text-base  text-[#424242]">' . $company  . '</p>';
 
-    echo '</div>'; //
-    echo '</div>'; //
+    echo '</div>'; 
+    echo '</div>'; 
     echo '</div>';
-    echo '<div class="pt-6 max-w-[620px]">'; //
+    echo '<div class="pt-6 max-w-[620px]">'; 
     echo '<div class="text-base lg:text-2xl  text-superDark max-h-36 overflow-hidden testimonials_text">' .  get_the_content(null, false, $testimonial->ID) . '<div>';
 
-    echo '</div>'; //
-    echo '<div class="pt-6">'; //
+    echo '</div>'; 
+    echo '<div class="pt-6">'; 
     echo '<p class="text-base  text-[#424242] max-w-[620px]">' . $sub_text . '</p>';
 
-    echo '</div>'; //
-    // echo '<div class="testimonials-logo-img">'; //
+    echo '</div>'; 
+    // echo '<div class="testimonials-logo-img">'; 
     // echo get_img_html($testimonial[0]['logo']);
     // echo '</div>'; //
 

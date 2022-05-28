@@ -1,10 +1,12 @@
 <?php
 ?>
 
-<ul class="flex gap-x-3 -ml-6 items-center  justify-center">
+<ul class="flex gap-x-3 items-center  justify-center">
     <?php
 
     $secondary_links = carbon_get_theme_option('misc_main_link');
+    // print_r($secondary_links);
+    // die;
     $academy_link = carbon_get_theme_option('misc_academy_link');
     $reversed_links = array_reverse($secondary_links, true);
     if($academy_link){
@@ -15,9 +17,9 @@
     }
     foreach ($reversed_links as $key => $logo) {
         
-        echo '<li><a href="' . $logo['href'] . '" class="text-[#424242] mobile-text  hover:text-green-500 w-8 h-8 grid place-items-center transition" target="_blank" rel="noopener noreferrer grid ">';
+        echo '<li><a href="' . $logo['href'] . '" class="text-[#424242] mobile-text  hover:text-blue-400 lg:hover:text-green-500 w-8 h-8 grid place-items-center transition" target="_blank" rel="noopener noreferrer grid ">';
         if (str_contains($logo['href'], 'facebook')) {
-            echo '<span class="sr-only">Facebook</span>';
+            // echo '<span class="sr-only">Facebook</span>';
             get_template_part('static/svgs/nav-bar-logos/facebook');
         }elseif (str_contains($logo['href'], 'codepen')){
             echo '<span class="sr-only">codepen</span>';

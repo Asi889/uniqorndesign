@@ -19,7 +19,8 @@ function crb_attach_term_options()
     $prefix = 'tag_';
     $metaBox = Container::make('term_meta', 'General')->where('term_taxonomy', '=', $taxonomy);
     $metaBox->add_fields(array(
-        Field::make( 'rich_text', $prefix.'content', 'Content' ),
+        // Field::make( 'rich_text', $prefix.'content', 'Content' ),
+        Field::make( 'image', $prefix.'hp-image', 'HomePage Image - (with blubs)' ),
     ));
 
     // category

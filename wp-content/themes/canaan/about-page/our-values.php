@@ -15,7 +15,7 @@ if (empty($values)) {
         <?php
         foreach ($values as $key => $v) {
 
-            echo '<div class="container px-[2px] lg:px-12 py-[2px] lg:py-12 max-w-[700px]  ">';
+            echo '<div class="container px-[2px] lg:px-12 py-[2px] lg:py-12 max-w-[700px] mx-auto">';
             echo '<div class="w-16 h-16">';
             echo get_img_html($v['image']);
             echo '</div>';

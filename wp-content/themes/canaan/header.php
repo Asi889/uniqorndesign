@@ -31,6 +31,9 @@ if (!defined('ABSPATH')) {
             offset: <?php echo get_option('posts_per_page'); ?>,
         }
     </script>
+    <!-- <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script> -->
+    <!-- <script src="/path/to/isotope.pkgd.min.js"></script> -->
 
     <meta charset="<?php bloginfo('charset'); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,8 +48,8 @@ if (!defined('ABSPATH')) {
 <body <?php body_class(); ?>>
     <div id="app">
         <div class="sticky-footer">
-            <div class="header-placeholder h-[80px]"></div>
-            <header class="header-wraper fixed h-[80px] top-0 inset-0 bg-white z-50">
+            <div class="header-placeholder h-16 lg:h-[80px] "></div>
+            <header class="header-wraper fixed h-16 lg:h-[80px] top-0 inset-0 bg-white z-50">
                 <?php
                 get_template_part('header-cmps/header-site', null, ['name' => '']);
                 get_template_part('header-cmps/header-mobile', null, []);

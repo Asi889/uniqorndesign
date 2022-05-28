@@ -23,6 +23,6 @@ $projects = get_posts([
         ?>
     </div>
     <div class="text-center mt-10">
-        <a class="max-w-[111px]  py-4 px-4 bg-Burgundy-400 text-[#FFF6FA] text-base lg:text-2xl font-semibold montserrat rounded-md justify-self-center " href="">See more</a>
+        <a class="max-w-[111px]  py-4 px-4 bg-Burgundy-400 hover:bg-Burgundy-500 focus:bg-Burgundy-400 focus:shadow-2xl transition duration-300 text-[#FFF6FA] text-base lg:text-2xl font-semibold montserrat rounded-md justify-self-center " href="">See more</a>
     </div>
 </section>

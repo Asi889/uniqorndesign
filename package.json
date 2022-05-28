@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.2",
+    "isotope-layout": "^3.0.6",
     "swiper": "^8.1.5",
     "tailwindcss": "^3.0.24"
   }
