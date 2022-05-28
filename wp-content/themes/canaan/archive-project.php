@@ -1,6 +1,7 @@
 <?php
 defined('ABSPATH') || die();
-
+// print_r(get_template_directory_uri());
+// die();
 $prefix = 'project_';
 global $posts;
 $projects = $posts;
@@ -31,7 +32,8 @@ get_header();
 				</header>
 
 				<div class="flex gap-x-2 lg:gap-x-4 gap-y-3 lg:gap-y-6 flex-wrap pt-5 lg:pt-10 mb-0 lg:mb-[112px] button-group filters-button-group">
-					<button class="magic-b border-1 border-solid text-sm lg:text-2xl  border-[#212121] rounded-full px-2 py-1 lg:px-4 lg:py-2 montserrat all-btn-active allButton" data-typer="allbuttons" data-filter="*" type="button">
+					<button class="flex items-center project-btn magic-b border-1 border-solid text-sm lg:text-2xl  border-[#212121] rounded-full px-2 py-1 lg:px-4 lg:py-2 montserrat all-btn-active allButton" data-division="allbuttons" data-filter="*" type="button">
+						<img class="img-check-mark" src="http://uniqorn-design.test:8080/wp-content/themes/canaan/static/images/black-checkmark.png" >
 						All
 					</button>
 					<?php
