@@ -47,7 +47,7 @@ $message_sent_text = carbon_get_the_post_meta('page-contactmessage_sent');
                 <div>
                 </div>
             </div>
-            <button class="px-4 lg:px-6 py-2 lg:py-3 text-[#BB51FC] text-base lg:text-2xl border-2 lg:border-[1px] border-[#BB51FC] rounded-md font-bold mt-6 hover:bg-purple-100 focus:bg-white montserrat"><?= pll__('Send') ;?></button>
+            <button class="px-4 lg:px-6 py-2 lg:py-3 text-[#BB51FC] text-base lg:text-2xl border-2 lg:border-[1px] border-[#BB51FC] rounded-md font-bold mt-6 hover:bg-purple-100 focus:bg-white focus:shadow-2xl transition duration-500 montserrat"><?= pll__('Send') ;?></button>
         </div>
         <div class="message_box">
 

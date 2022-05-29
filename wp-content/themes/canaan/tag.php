@@ -4,19 +4,18 @@ defined('ABSPATH') || die();
 global $wp_query, $posts;
 $term = get_queried_object();
 $term_data = carbon_get_term_meta($term->term_id, $term->name, $container_id = '');
+$projects = (array) get_posts([
+    'post_type' => 'project',
+    'posts_per_page'      => 4,
+    'orderby'        => 'rand',
+]);
 
-
-// print_r($);
-// die;
-// $prefix = 'tag_';
-
-// $contnet = carbon_get_term_meta($tag_id, $prefix . 'content');
 
 get_header();
 
 ?>
 
-<div id="primary" class="content-area">
+<div id="primary" class="content-area montserrat ">
     <main id="main" class="site-main">
 
         <div class="max-w-[1280px] mx-auto">
@@ -26,7 +25,7 @@ get_header();
                     <span>
                         <?= pll__("Let's talk about"); ?>
                     </span>
-                    <span>
+                    <span class="cats-and-terms-gardient">
                         <?= $term->name ?>
                     </span>
             </header><!-- .page-header -->
@@ -39,9 +38,13 @@ get_header();
         <section class="mb-20 max-w-[1420px] mx-auto grid grid-cols-1 xl:grid-cols-2">
 
             <?php
-
-            foreach ($posts as $key => $_post) {
-                echo project_prev_cmp($_post);
+            
+            foreach ($projects as $key => $_post) {
+                
+                // print_r($_post);
+                // die;
+                echo project_prev_cmp($_post,$term->name);
+            //    echo  project_prev_cmp_filterd($_post,$term->name );
             }
             ?>
 
