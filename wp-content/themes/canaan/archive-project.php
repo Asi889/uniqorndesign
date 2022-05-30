@@ -44,13 +44,13 @@ get_header();
 						'taxonomy' => 'category',
 					));
 					foreach ($terms as $key => $t) {
-						echo '<button type="button" data-tag-id="' . $t->term_id . '" data-typer="term"  data-filter="iso-' . $t->term_id . '" class="project-btn magic-b term-project-btn text-blue-500 flex gap-x-[7px] items-center border-1 border-solid  border-blue-500 active:bg-blue-400  text-sm lg:text-2xl lg:leading-none px-2 lg:px-4 h-[52px]  rounded-full montserrat">';
+						echo '<button type="button" data-tag-id="' . $t->term_id . '" data-typer="term"  data-filter="iso-' . $t->term_id . '" class="project-btn magic-b term-project-btn text-blue-500 flex gap-x-[7px] items-center border-1 border-solid  border-blue-500 active:bg-blue-200  text-sm lg:text-2xl lg:leading-none px-2 lg:px-4 h-[52px]  rounded-full montserrat">';
 						echo '<img class=" check-mark-remove" src="' .  get_template_directory_uri() . '/static/images/blue-checkmark.png" >';
 						echo $t->name;
 						echo '</button>';
 					}
 					foreach ($cats as $key => $t) {
-						echo '<button type="button" data-tag-id="' . $t->term_id . '" data-typer="category"  data-filter="iso-' . $t->term_id . '"  class="project-btn magic-b  items category-project-btn text-purple-500 flex gap-x-[7px] items-center border-1 border-solid border-purple-500 active:bg-blue-400  text-sm lg:text-2xl lg:leading-none px-2 lg:px-4 h-[52px]  rounded-full montserrat">';
+						echo '<button type="button" data-tag-id="' . $t->term_id . '" data-typer="category"  data-filter="iso-' . $t->term_id . '"  class="project-btn magic-b  items category-project-btn text-purple-500 flex gap-x-[7px] items-center border-1 border-solid border-purple-500 active:bg-purple-200  text-sm lg:text-2xl lg:leading-none px-2 lg:px-4 h-[52px]  rounded-full montserrat">';
 						echo '<img class=" check-mark-remove" src="' .  get_template_directory_uri() . '/static/images/purple-checkmark.png" >';
 						echo $t->name;
 						echo '</button>';
@@ -60,11 +60,11 @@ get_header();
 
 				<section class="load-more-project-js flex flex-col">
 
-					<div class="grid lg:flex lg:flex-wrap gap-x-5 gap-y-20  mt-5 lg:mt-5  lg:grid-cols-12 data-project-grid-js" data-project-grid="true ">
+					<div class="grid lg:flex  gap-x-5 gap-y-20  mt-5 lg:mt-5   data-project-grid-js" data-project-grid="true ">
 
 						<?php
 						foreach ($projects as $key => $p) {
-							echo project_prev_cmp($p,false, $key);
+							echo project_prev_cmp($p,false,false, $key);
 							// print_r($p);
 						}
 						// die;

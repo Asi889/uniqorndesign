@@ -19,7 +19,7 @@ function get_uniqorns_tags_and_cats($posttags, $categories, $archiveArticle = fa
         if ($posttags) {
 
             foreach ((array) $posttags as $key => $tag) {
-                $html .= '<li class="bg-[#FFF6FA] hover:bg-[#f3e2ea]  text-Burgundy-400 rounded-2xl text-sm  px-[10px] py-[1px] leading-[30px] montserrat relative z-10">';
+                $html .= '<li class="bg-[#FFF6FA] hover:bg-[#f3e2ea]  text-Burgundy-400 rounded-2xl text-sm  px-[8px] py-[4px] leading-[30px] montserrat relative z-10">';
 
                 $html .= '<a href="' . get_term_link($tag) . '" class="">';
                 $html .= $tag->name;
@@ -29,7 +29,7 @@ function get_uniqorns_tags_and_cats($posttags, $categories, $archiveArticle = fa
         }
         if ($categories) {
             foreach ((array) $categories as $key => $tag) {
-                $html .= '<li class="bg-[#FFF6FA] hover:bg-[#f3e2ea] text-Burgundy-400 rounded-2xl text-sm  px-[10px] py-[1px] leading-[30px] montserrat relative z-10">';
+                $html .= '<li class="bg-[#FFF6FA] hover:bg-[#f3e2ea] text-Burgundy-400 rounded-2xl text-sm  px-[8px] py-[4px] leading-[30px] montserrat relative z-10">';
                 $html .= '<a href="' . get_term_link($tag) . '">';
                 $html .= $tag->name;
                 $html .= '</a>';
@@ -41,7 +41,7 @@ function get_uniqorns_tags_and_cats($posttags, $categories, $archiveArticle = fa
     if ($posttags) {
 
         foreach ((array) $posttags as $key => $tag) {
-            $html .= '<li class="bg-blue-100 hover:bg-[#d1dff1]  text-blue-500 rounded-2xl text-sm  px-[10px] py-[1px] leading-[30px] montserrat">';
+            $html .= '<li class="bg-blue-100 hover:bg-[#d1dff1]  text-blue-500 rounded-2xl text-sm  px-[8px] py-[4px] leading-[30px] montserrat">';
 
             $html .= '<a href="' . get_term_link($tag) . '" class="">';
             $html .= $tag->name;
@@ -51,7 +51,7 @@ function get_uniqorns_tags_and_cats($posttags, $categories, $archiveArticle = fa
     }
     if ($categories) {
         foreach ((array) $categories as $key => $tag) {
-            $html .= '<li class="bg-purple-100 hover:bg-[#f0e5fc] text-purple-500 rounded-2xl text-sm  px-[10px] py-[1px] leading-[30px] montserrat">';
+            $html .= '<li class="bg-purple-100 hover:bg-[#f0e5fc] text-purple-500 rounded-2xl text-sm  px-[8px] py-[4px] leading-[30px] montserrat">';
             $html .= '<a href="' . get_term_link($tag) . '">';
             $html .= $tag->name;
             $html .= '</a>';
@@ -165,7 +165,7 @@ function article_prev_cmp(WP_Post $p)
 
 
 
-function project_prev_cmp(WP_Post $p, $filterdOut, $key = 0)
+function project_prev_cmp(WP_Post $p, $filterdOut, $isfull, $key = 0)
 {
     $html = '';
     $posttags = get_the_tags($p->ID);
@@ -192,22 +192,23 @@ function project_prev_cmp(WP_Post $p, $filterdOut, $key = 0)
         }
     }
 
-    $class = 'project-card w-full mx-auto grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl transition ease-in-out duration-300  max-w-[335px] lg:max-w-[436px]';
+    // $class = 'project-card w-full mx-auto grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl transition ease-in-out duration-300  max-w-[335px] lg:max-w-[436px] ';
+    $class = 'project-card w-full mx-auto grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl transition ease-in-out duration-300  max-w-[335px] ' . $isfull ? ' lg:max-w-[676px]  px-0 lg:px-3 py-0 lg:py-3 ' : ' lg:max-w-[436px] ';
     $halfGrid = [3, 4];
     $towThird = [6, 9];
-    
+
     if (in_array($filterdOut, $categoriesName) || in_array($filterdOut, $posttagsName)) {
         $image = get_post_thumbnail_id($p->ID,);
-        $html .= '<div data-post-tags="[' . implode(',', $posttagsid) . ',' . implode(',', $categoriesid) . ']" class="p-item ' . $class . '" data-category="' . implode(',', $catFilters) . '">';
+        $html .= '<div data-post-tags="[' . implode(',', $posttagsid) . ',' . implode(',', $categoriesid) . ']" class="p-item max-h-[547px] ' . $class . '" data-category="' . implode(',', $catFilters) . '">';
         $html .= '<div class=" grid w-full gap-y-5 relative">';
         $html .= '<div class=" bg-[#F9F2FF] h-[436px]">';
         $html .= get_img_html($image, true, 'full', 'h-full w-full object-cover');
         $html .= '</div>';
-        $html .= '<h2 class="font-bold text-xl lg:text-2xl text-[#424242]  montserrat">' . $p->post_name . '</h2>';
+        $html .= '<h2 class="font-bold text-2xl leading-[29px] text-[#424242]  montserrat">' . $p->post_name . '</h2>';
         $html .= '<a class="absolute inset-0 w-full h-full z-0" href="' . get_the_permalink($p) . '"> </a>';
         $html .= '</div>';
-        $html .= '<div class="pt-4 lg:pt-5">';
-        $html .= '<ul class="flex gap-x-4 pt-3 flex-wrap gap-y-2">';
+        $html .= '<div class="pt-2">';
+        $html .= '<ul class="flex gap-x-4  flex-wrap gap-y-2">';
         $html .= get_uniqorns_tags_and_cats($posttags, $postcategories,);
         $html .= '</ul>';
         $html .= '</div>';
@@ -227,8 +228,8 @@ function project_prev_cmp(WP_Post $p, $filterdOut, $key = 0)
         $html .= '<h2 class="font-bold text-xl lg:text-2xl text-[#424242]  montserrat">' . $p->post_name . '</h2>';
         $html .= '<a class="absolute inset-0 w-full h-full z-0" href="' . get_the_permalink($p) . '"> </a>';
         $html .= '</div>';
-        $html .= '<div class="pt-4 lg:pt-5">';
-        $html .= '<ul class="flex gap-x-4 pt-3 flex-wrap gap-y-2">';
+        $html .= '<div class="pt-2">';
+        $html .= '<ul class="flex gap-x-4  flex-wrap gap-y-2">';
         $html .= get_uniqorns_tags_and_cats($posttags, $postcategories,);
         $html .= '</ul>';
         $html .= '</div>';
@@ -236,6 +237,3 @@ function project_prev_cmp(WP_Post $p, $filterdOut, $key = 0)
         return $html;
     }
 }
-
-
-

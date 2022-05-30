@@ -49,7 +49,7 @@ if (!defined('ABSPATH')) {
 
             <?php get_template_part('header-cmps/navbar-links'); ?>
 
-            <div class="pt-16">
+            <div class="">
             <img class="mx-auto" src="<?php echo get_template_directory_uri() . '/static/images/header-blob.png'; ?>" alt="">
             </div>
 
