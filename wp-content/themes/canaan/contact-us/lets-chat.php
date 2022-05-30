@@ -1,7 +1,7 @@
 <?php
 $phone = carbon_get_the_post_meta('page-contactphone_number');
-$mail = carbon_get_the_post_meta('page-contactemail');
-$whatsup = carbon_get_the_post_meta('page-contactwhatsup');
+$mail = carbon_get_post_meta(get_the_ID(),'page-contactemail');
+$whatsup =  carbon_get_post_meta(get_the_ID(),'page-contactwhatsup');
 ?>
 
 <div class="grid md:flex gap-x-[340px] justify-between  border-t-[1px] border-[#EEEEEE] mt-8 lg:mt-10 pt-8 lg:pt-10 ">
@@ -22,11 +22,11 @@ $whatsup = carbon_get_the_post_meta('page-contactwhatsup');
         <a class="flex items-center hover:opacity-75 transition duration-500 focus:opacity-20" href="tel:<?php echo $phone; ?>">
             <div class="hidden lg:flex items-center pt-2 lg:pt-4  ">
                 <?php get_template_part('static/svgs/contact-page/phone-icon'); ?>
-                <p class="text-base lg:text-2xl text-superDark  pl-[10px] montserrat">+9725200000</p>
+                <p class="text-base lg:text-2xl text-superDark  pl-[10px] montserrat"><?php echo $phone; ?></p>
             </div>
             <div class="flex items-center lg:hidden pt-2 lg:pt-4">
                 <?php get_template_part('static/svgs/contact-page/phone-mobile-icon'); ?>
-                <p class="text-base lg:text-2xl text-superDark  pl-[10px] montserrat ">+9725200000</p>
+                <p class="text-base lg:text-2xl text-superDark  pl-[10px] montserrat "><?php echo $phone; ?></p>
             </div>
         </a>
     </div>
@@ -35,11 +35,11 @@ $whatsup = carbon_get_the_post_meta('page-contactwhatsup');
         <a class="flex items-center hover:opacity-75 transition duration-500 focus:opacity-20" href="mailto:<?php echo $mail; ?>">
             <div class="hidden lg:flex items-center ">
                 <?php get_template_part('static/svgs/contact-page/letter-icon'); ?>
-                <p class="text-base lg:text-2xl text-superDark pl-[10px] montserrat ">adam@uniqorn.design</p>
+                <p class="text-base lg:text-2xl text-superDark pl-[10px] montserrat "><?php echo $mail; ?></p>
             </div>
             <div class="flex items-center lg:hidden ">
                 <?php get_template_part('static/svgs/contact-page/letter-mobile-icon'); ?>
-                <p class="text-base lg:text-2xl text-superDark pl-[10px] montserrat ">adam@uniqorn.design</p>
+                <p class="text-base lg:text-2xl text-superDark pl-[10px] montserrat ">><?php echo $mail; ?></p>
             </div>
         </a>
 

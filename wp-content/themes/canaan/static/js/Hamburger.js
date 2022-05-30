@@ -17,5 +17,40 @@ class Hamburger{
 
     }
 }
+// class Hamburger{
+//   constructor(el, options){
+//       this.toggle = this.toggle.bind(this)
+//       this.open = this.open.bind(this)
+//       this.close = this.close.bind(this)
+
+
+//       this.isOpen = false
+//       this.btn = el;
+//       this.menu = document.querySelector(`.mobile-menu-js`);
+//       this.btn.addEventListener('click', this.toggle)
+//   }
+
+//   toggle(){
+//       if( !this.isOpen){
+//           this.open()
+//       } else{
+//           this.close()
+//       }
+//   }
+//   open(){
+//       this.isOpen = true
+//       this.menu.classList.add('open')
+//       this.btn.classList.add('open')
+//       document.querySelector(`html`).classList.add('no-scroll')
+//   }
+//   close(){
+//       this.isOpen = false
+//       this.menu.classList.remove('open')
+//       this.btn.classList.remove('open')
+//       document.querySelector(`html`).classList.remove('no-scroll')
+
+
+//   }
+// }
 
 export default Hamburger;

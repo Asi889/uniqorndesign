@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
             <?php get_template_part('static/svgs/logo-mobile'); ?>
         </a>
 
-        <button class="flex lg:hidden  items-center justify-center w-[30px] h-[20px]  hamburger p2 box-border ">
+        <button class="flex   items-center justify-center w-[30px] h-[20px]  hamburger p2 box-border hamburger-js">
             <span></span>
             <span></span>
             <span></span>
@@ -39,7 +39,7 @@ if (!defined('ABSPATH')) {
             ?>
             <div class="w-full mx-auto ">
 
-                <a class="grid justify-center pr-[15px] mobile-text" href="<?php echo home_url(); ?>">
+                <a class="grid justify-center pr-[15px] mobile-text text-[#424242] hover:text-blue-400" href="<?php echo home_url(); ?>">
 
                     <?php get_template_part('static/svgs/nav-bar-logos/academy-mobile'); ?>
                 </a>
@@ -56,4 +56,4 @@ if (!defined('ABSPATH')) {
         </div>
     </div>
 
-</div>
+</div> 

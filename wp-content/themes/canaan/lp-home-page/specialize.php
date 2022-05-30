@@ -20,7 +20,7 @@ function term_cmp(WP_Term $term, $is_odd)
     echo '<div class="max-w-[580px]">';
     echo '<a href="' . get_term_link($term) . '" rel="noopener noreferrer" class="grid  hover:opacity-60 transition-opacity">';
     echo '<h4 class="text-[32px] leading-[39px] lg:text-4xl lg:leading-[48px] text-superDark font-bold">' . $term->name . '</h4>';
-    echo '<p class="text-2xl  mt-5 lg:mt-4 text-[#424242] ">' . $term->description . '</p>';
+    echo '<p class="text-2xl  mt-5 lg:mt-4 text-[#424242] montserrat">' . $term->description . '</p>';
     echo '</a>';
     echo '<a href="' . get_permalink('64') . '" rel="noopener noreferrer" class="grid text-superDark text-2xl font-semibold mt-5 hover:opacity-60 transition-opacity">';
     echo pll__('See all projects');

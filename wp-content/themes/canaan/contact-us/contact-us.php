@@ -1,5 +1,6 @@
 <?php
 $message_sent_text = carbon_get_the_post_meta('page-contactmessage_sent');
+
 ?>
 
 <div class="  ">
@@ -55,9 +56,9 @@ $message_sent_text = carbon_get_the_post_meta('page-contactmessage_sent');
 
         <div class="hidden messege-sent montserrat  pb-36">
             <!-- <h1 class="lp-section8-title my-5">ההודעה נשלחה בהצלחה!</h1> -->
-            <p class="lp_sec8_form-message-text">
-            <?=  pll__($message_sent) ;?>
-            </p>
+            <div class="lp_sec8_form-message-text">
+            <?=  $message_sent_text ;?>
+            </div>
 
         </div>
 

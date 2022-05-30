@@ -1,53 +1,50 @@
-// .spin-gear-fast{
-//     animation: spin 4s linear infinite;
 
-// @keyframes spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
-// }
-// .spin-gear-faster{
-//     animation: spin-counter 4s linear infinite;
 
-// @keyframes spin-counter {
-//   from {
-//     transform: rotate(360deg);
-//   }
-//   to {
-//     transform: rotate(0deg);
-//   }
-// }
-// }
-
-.page_404{ padding:40px 0; background:#fff; font-family: "Montserrat", sans-serif;
+.page_404{ 
+    padding:40px 0;
+    background:#fff;
+    font-family: "Montserrat", sans-serif;
 }
 
 .page_404  img{ width:100%;}
 
 .four_zero_four_bg{
  
- background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+     background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
     height: 400px;
     background-position: center;
- }
+}
+.container_404{
+   max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
  
  
- .four_zero_four_bg h1{
+.four_zero_four_bg h1{
  font-size:80px;
+}
+.error-four{
+    background: linear-gradient(95.34deg, #C0EECA -0.51%, #8EBFFF 128.64%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-size: 120px;
+    font-weight:700;
+ }
+
+ .error_link{
+    background: linear-gradient(95.34deg, #C0EECA -0.51%, #8EBFFF 128.64%);
+
+ }
+ .error_link:hover{
+    background: linear-gradient(95.34deg, #c4edcd -0.51%, #92bef8 128.64%);
+    // box-shadow: rgb(31, 31, 30);
  }
  
-  .four_zero_four_bg h3{
-			 font-size:80px;
-			 }
+  
 			 
-			 .link_404{			 
-	color: #fff!important;
-    padding: 10px 20px;
-    background: #39ac31;
-    margin: 20px 0;
-    display: inline-block;}
-	.contant_box_404{ margin-top:-50px;}
+
+.contant_box_404{ margin-top:-50px;}
+

@@ -192,8 +192,9 @@ function project_prev_cmp(WP_Post $p, $filterdOut, $isfull, $key = 0)
         }
     }
 
-    // $class = 'project-card w-full mx-auto grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl transition ease-in-out duration-300  max-w-[335px] lg:max-w-[436px] ';
-    $class = 'project-card w-full mx-auto grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl transition ease-in-out duration-300  max-w-[335px] ' . $isfull ? ' lg:max-w-[676px]  px-0 lg:px-3 py-0 lg:py-3 ' : ' lg:max-w-[436px] ';
+    $class = 'project-card w-full mx-auto grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl transition ease-in-out duration-300  max-w-[335px] lg:max-w-[436px] lg:max-w-[676px] ';
+    // $class = 'project-card w-full mx-auto grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl transition ease-in-out duration-300  ';
+    // $class = 'project-card w-full mx-auto grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl transition ease-in-out duration-300  max-w-[335px] ' . $isfull ? ' lg:max-w-[676px]  px-0 lg:px-3 py-0 lg:py-3 ' : ' lg:max-w-[436px] ';
     $halfGrid = [3, 4];
     $towThird = [6, 9];
 

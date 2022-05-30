@@ -64,7 +64,7 @@ get_header();
 
 						<?php
 						foreach ($projects as $key => $p) {
-							echo project_prev_cmp($p,false,false, $key);
+							echo project_prev_cmp($p,false,true, $key);
 							// print_r($p);
 						}
 						// die;

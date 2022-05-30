@@ -28,10 +28,16 @@ if (is_admin()) {
     remove_filter('pre_term_description', 'wp_filter_kses');
     remove_filter('term_description', 'wp_kses_data');
     // LETS ADD OUR NEW CAT DESCRIPTION BOX
+    add_filter('post_tag_edit_form_fields', 'filter_wordpress_category_editor');
     add_filter('category_edit_form_fields', 'filter_wordpress_category_editor');
     function filter_wordpress_category_editor($tag)
     {
 ?>
+<style>
+    .form-field.term-description-wrap{
+        display:none !important;
+    }
+</style>
         <table class="form-table">
             <tr class="form-field">
                 <th scope="row" valign="top"><label for="description"><?php _ex('Description', 'Taxonomy Description'); ?></label></th>
