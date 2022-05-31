@@ -15,7 +15,6 @@ get_header();
 					<?= pll__('Articles') ;?>
 				</h1>
 			</header>
-
 			<article class="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-4 lg:gap-y-11  px-4 max-w-[1204px] mx-auto lg:py-14 py-10">
 				<?php
 

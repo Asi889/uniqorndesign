@@ -10,7 +10,7 @@ if (!$image) {
 $tags = get_the_tags();
 ?>
 
-<section class="mt-16 mb-14 max-w-[1180px] mx-auto px-6 lg:px-0">
+<section class="mt-0 lg:mt-[60px] mb-14 max-w-[1180px] mx-auto px-6 lg:px-0">
     <?php
     if ($image) {
         echo '<div class="w-full mb-8 rounded-2xl border border-[#eeeeee]">';

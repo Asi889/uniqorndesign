@@ -1,50 +1,62 @@
 <?php
 defined('ABSPATH') || die();
 
-global $wp_query;
+global $wp_query, $posts;
 $term = get_queried_object();
-
-$tag_id = $term->term_id;
-$posts = get_posts([
+$term_data = carbon_get_term_meta($term->term_id, $term->name, $container_id = '');
+$projects = (array) get_posts([
     'post_type' => 'project',
-    'tax_query' => [[
-        'taxonomy'  => 'post_tag',
-        "field"    => "term_id",
-        "terms"    => $tag_id
-    ]]
+    // 'posts_per_page'      => 4,
+    'orderby'        => 'rand',
 ]);
 
-$prefix = 'tag_';
-// $mainObj = new canaan_post($post);
-// $url = $mainObj->get_url();
-// $pid = $mainObj->get_ID();
-
-// echo $url;
-
-$contnet = carbon_get_term_meta($tag_id, $prefix . 'content');
 
 get_header();
 
 ?>
 
-<main>
-    <div>
-        <div class="w-full bg-[#FAFAFA]">
-            <div class="max-w-">
+<div id="primary" class="content-area montserrat ">
+    <main id="main" class="site-main max-w-[1420px] montserrat mx-5 xl:mx-auto">
 
-            </div>
+        <div class="">
 
+            <header class="lg:grid-cols-2 gap-x-[110px]   py-8 lg:py-20">
+                <h1 class="text-superDark text-4xl lg:text-[68px] lg:leading-[82px] font-bold">
+                    <span>
+                        <?= pll__("Let's talk about"); ?>
+                    </span>
+                    <span class="cats-and-terms-gardient">
+                        <?= $term->name ?>
+                    </span>
+            </header>
+            <?php
+            the_archive_description('<article class="term-description mb-[32px]  max-w-[730px]  montserrat">', '</article>');
+            ?>
         </div>
-    </div>
-</main>
 
 
+        <!-- <section class="mb-20 max-w-[1420px] mx-auto grid grid-cols-1 xl:grid-cols-2"> -->
+        <section class="mb-20 max-w-[1420px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-0 lg:gap-x-8  gap-y-9 lg:gap-y-[60px] ">
+            <?php
+            
+            foreach ($projects as $key => $_post) {
+                
+                // print_r($_post);
+                // die;
+                echo project_prev_cmp($_post,$term->name,true);
+            //    echo  project_prev_cmp_filterd($_post,$term->name );
+            }
+            ?>
+
+        </section>
 
 
+    </main><!-- #main -->
 
-
-
+    <?php get_template_part('parts/testimonials'); ?>
+    <?php get_template_part('parts/partners-static'); ?>
+    <?php get_template_part('parts/lets-talk'); ?>
+</div><!-- #primary -->
 
 <?php
-
 get_footer();

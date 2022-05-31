@@ -4,30 +4,57 @@ defined('ABSPATH') || die();
 include_once(dirname(__FILE__) . '/components.php');
 include_once(dirname(__FILE__) . '/svg.php');
 
-function get_uniqorns_tags_and_cats($posttags, $categories, $options = ['have-anchor' => true])
+function get_uniqorns_tags_and_cats($posttags, $categories, $archiveArticle = false, $options = ['have-anchor' => true])
 {
 
     // $blue = 'text-blue-500 bg- blue-200';
     // $red = 'text-Burgundy-400 bg-[#FFF6FA]';
     // $purple = 'bg-purple-100 text-purple-5';
     $html = '';
+
+
+
+
+    if ($archiveArticle) {
+        if ($posttags) {
+
+            foreach ((array) $posttags as $key => $tag) {
+                $html .= '<li class="bg-[#FFF6FA] hover:bg-[#f3e2ea]  text-Burgundy-400 rounded-2xl text-sm  px-[8px] py-[4px] leading-[30px] montserrat relative z-10">';
+
+                $html .= '<a href="' . get_term_link($tag) . '" class="">';
+                $html .= $tag->name;
+                $html .= '</a>';
+                $html .= '</li>';
+            }
+        }
+        if ($categories) {
+            foreach ((array) $categories as $key => $tag) {
+                $html .= '<li class="bg-[#FFF6FA] hover:bg-[#f3e2ea] text-Burgundy-400 rounded-2xl text-sm  px-[8px] py-[4px] leading-[30px] montserrat relative z-10">';
+                $html .= '<a href="' . get_term_link($tag) . '">';
+                $html .= $tag->name;
+                $html .= '</a>';
+                $html .= '</li>';
+            }
+        }
+        return $html;
+    }
     if ($posttags) {
 
         foreach ((array) $posttags as $key => $tag) {
-            $html .= '<li class="bg-[#FFF6FA] text-Burgundy-400 rounded-2xl text-sm  px-2 leading-[30px]">';
+            $html .= '<li class="bg-blue-100 hover:bg-[#d1dff1]  text-blue-500 rounded-2xl text-sm  px-[8px] py-[4px] leading-[30px] montserrat">';
 
-            if ($options['have-anchor']) $html .= '<a href="TODO: MISSING LINK" class="">';
+            $html .= '<a href="' . get_term_link($tag) . '" class="">';
             $html .= $tag->name;
-            if ($options['have-anchor']) $html .= '</a>';
+            $html .= '</a>';
             $html .= '</li>';
         }
     }
     if ($categories) {
         foreach ((array) $categories as $key => $tag) {
-            $html .= '<li class="bg-purple-100 text-purple-500 rounded-2xl text-sm  px-2 leading-[30px]">';
-            if ($options['have-anchor']) $html .= '<a href="TODO: MISSING LINK">';
+            $html .= '<li class="bg-purple-100 hover:bg-[#f0e5fc] text-purple-500 rounded-2xl text-sm  px-[8px] py-[4px] leading-[30px] montserrat">';
+            $html .= '<a href="' . get_term_link($tag) . '">';
             $html .= $tag->name;
-            if ($options['have-anchor']) $html .= '</a>';
+            $html .= '</a>';
             $html .= '</li>';
         }
     }
@@ -79,9 +106,8 @@ function populate_children($menu_array, $menu_item)
 function countMinutesToRead($content)
 {
     $count = str_word_count($content);
-    if ($content < 300) {
-        return "";
-    }
+    // return $count;
+    if ($content < 300)  pll__('1 min read');
     return  round($count / 60) . '&nbsp;' . pll__('min read');
 }
 
@@ -107,69 +133,108 @@ function article_prev_cmp(WP_Post $p)
 {
     $html = '';
     $posttags = get_the_tags($p->ID);
-
+    $postcategories = get_the_category($p->ID);
     $image = wp_get_attachment_image_src(get_post_thumbnail_id($p->ID), 'thumbnail');
 
-    $html .= '<a href="" class="w-full block px-6 lg:px-8 py-8 bg-[#FFFFFF]   rounded-lg hover:drop-shadow-2xl"> ';
-    $html .= '<h2 class="font-bold text-xl lg:text-2xl text-[#424242] pb-2 montserrat">' . $p->post_title . '</h2>';
-    $html .= '<div class="flex gap-x-4 pt-2 pb-3">';
+    $html .= '<div class="w-full block px-6 lg:px-8 py-8 bg-[#FFFFFF]   rounded-lg hover:drop-shadow-2xl transition ease-in-out duration-700 relative"> ';
+    $html .= '<h2 class="font-bold text-xl lg:text-2xl text-[#424242]  montserrat">' . $p->post_title . '</h2>';
+    $html .= '<div class="flex gap-x-4 pt-2 lg:pt-4  pb-4 lg:pb-6 items-center flex-wrap">';
 
-    $html .= '<ul class="flex gap-x-3 mt-4 lg:mt-8 ">';
-    $html .=  get_uniqorns_tags_and_cats($posttags, [], ['have-anchor' => false]);
-    $html .= '</ul>';
-
+    $html .= '<ul class="flex gap-x-3 gap-y-2 flex-wrap items-center">';
+    // $html .= '<ul class="flex gap-x-3 mt-4 lg:mt-8 ">';
+    $html .=  get_uniqorns_tags_and_cats($posttags, $postcategories, true);
     $html .= '<span class="text-[#9E9E9E]  text-sm  ">';
     $html .= countMinutesToRead($p->post_content);
     $html .= '</span>';
+    $html .= '</ul>';
+
     $html .= '</div>';
-    $html .= '<div class="text-base montserrat text-[#616161]">';
-    $html .= canaan_get_excerpt($p, '', 35);
+    $html .= '<div class="text-base montserrat text-[#616161] max">';
+    $html .= canaan_get_excerpt($p, '', 30);
     $html .= '</div>';
     $html .= '<div class="flex gap-x-4 pt-4 items-center">';
 
     $html .= get_writer_cmp($p);
 
     $html .= '</div>';
-    $html .= '</a>';
+    $html .= '<a class="absolute inset-0 w-full h-full z-0" href="' . get_the_permalink($p) . '"> </a>';
+
+    $html .= '</div>';
     return $html;
 }
 
 
 
-function project_prev_cmp(WP_Post $p, $key = 0)
+function project_prev_cmp(WP_Post $p, $filterdOut, $isfull, $key = 0)
 {
-    $html ='';
+    $html = '';
     $posttags = get_the_tags($p->ID);
+    $postcategories = get_the_category($p->ID);
     $posttagsid = [];
-    if($posttags && !is_wp_error($posttags)){
+    $posttagsName = [];
+    $categoriesid = [];
+    $categoriesName = [];
+    $catFilters = [];
+
+
+    if ($posttags && !is_wp_error($posttags)) {
         foreach ($posttags as $tag) {
             $posttagsid[] = $tag->term_id;
+            $posttagsName[] = $tag->name;
+            $catFilters[] = 'iso-' . $tag->term_id;
         }
     }
-    $class ='project-card w-full grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl';
-    $halfGrid =[3,4];
-    $towThird =[6,9];
-    if(in_array($key, $halfGrid)){
-        $class .= ' col-span-6';
-    } elseif(in_array($key, $towThird)){
-        $class .= '  col-span-8';
-    } else {
-        $class .= ' max-w-[335px] lg:max-w-[436px] col-span-4';
+    if ($postcategories && !is_wp_error($postcategories)) {
+        foreach ($postcategories as $cat) {
+            $categoriesid[] = $cat->term_id;
+            $categoriesName[] = $cat->name;
+            $catFilters[] = 'iso-' . $cat->term_id;
+        }
     }
-    
 
-    $image = get_post_thumbnail_id($p->ID,);
+    $class = 'project-card w-full mx-auto grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl transition ease-in-out duration-300  max-w-[335px] lg:max-w-[436px] lg:max-w-[676px] ';
+    // $class = 'project-card w-full mx-auto grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl transition ease-in-out duration-300  ';
+    // $class = 'project-card w-full mx-auto grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg hover:drop-shadow-2xl transition ease-in-out duration-300  max-w-[335px] ' . $isfull ? ' lg:max-w-[676px]  px-0 lg:px-3 py-0 lg:py-3 ' : ' lg:max-w-[436px] ';
+    $halfGrid = [3, 4];
+    $towThird = [6, 9];
 
-    $html .= '<div data-post-tags="[' . implode(',', $posttagsid) . ']" class="' . $class . '">';
-    $html .= '<div class=" bg-[#F9F2FF] h-[436px]">';
-    $html .= get_img_html($image, true, 'full', 'h-full w-full object-cover');
-    $html .= '</div>';
-    $html .= '<div class="pt-4 lg:pt-5">';
-    $html .= '<h2 class="font-bold text-xl lg:text-2xl text-[#424242]  montserrat">' . $p->post_title . '</h2>';
-    $html .= '<ul class="flex gap-x-4 pt-3">';
-    $html .= get_uniqorns_tags_and_cats($posttags, []);
-    $html .= '</ul>';
-    $html .= '</div>';
-    $html .= '</div>';
-    return $html;
+    if (in_array($filterdOut, $categoriesName) || in_array($filterdOut, $posttagsName)) {
+        $image = get_post_thumbnail_id($p->ID,);
+        $html .= '<div data-post-tags="[' . implode(',', $posttagsid) . ',' . implode(',', $categoriesid) . ']" class="p-item max-h-[547px] ' . $class . '" data-category="' . implode(',', $catFilters) . '">';
+        $html .= '<div class=" grid w-full gap-y-5 relative">';
+        $html .= '<div class=" bg-[#F9F2FF] h-[436px]">';
+        $html .= get_img_html($image, true, 'full', 'h-full w-full object-cover');
+        $html .= '</div>';
+        $html .= '<h2 class="font-bold text-2xl leading-[29px] text-[#424242]  montserrat">' . $p->post_name . '</h2>';
+        $html .= '<a class="absolute inset-0 w-full h-full z-0" href="' . get_the_permalink($p) . '"> </a>';
+        $html .= '</div>';
+        $html .= '<div class="pt-2">';
+        $html .= '<ul class="flex gap-x-4  flex-wrap gap-y-2">';
+        $html .= get_uniqorns_tags_and_cats($posttags, $postcategories,);
+        $html .= '</ul>';
+        $html .= '</div>';
+        $html .= '</div>';
+        return $html;
+    }
+
+
+    if (!$filterdOut) {
+
+        $image = get_post_thumbnail_id($p->ID,);
+        $html .= '<div data-post-tags="[' . implode(',', $posttagsid) . ',' . implode(',', $categoriesid) . ']" class="p-item ' . $class . '" data-category="' . implode(',', $catFilters) . '">';
+        $html .= '<div class=" grid w-full gap-y-5 relative">';
+        $html .= '<div class=" bg-[#F9F2FF] h-[436px]">';
+        $html .= get_img_html($image, true, 'full', 'h-full w-full object-cover');
+        $html .= '</div>';
+        $html .= '<h2 class="font-bold text-xl lg:text-2xl text-[#424242]  montserrat">' . $p->post_name . '</h2>';
+        $html .= '<a class="absolute inset-0 w-full h-full z-0" href="' . get_the_permalink($p) . '"> </a>';
+        $html .= '</div>';
+        $html .= '<div class="pt-2">';
+        $html .= '<ul class="flex gap-x-4  flex-wrap gap-y-2">';
+        $html .= get_uniqorns_tags_and_cats($posttags, $postcategories,);
+        $html .= '</ul>';
+        $html .= '</div>';
+        $html .= '</div>';
+        return $html;
+    }
 }

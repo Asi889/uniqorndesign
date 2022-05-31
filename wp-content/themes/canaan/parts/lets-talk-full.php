@@ -8,18 +8,12 @@ $text = carbon_get_theme_option('misc_lets_talk_text');
 // }
 
 ?>
-<!-- //mt-10 4px -->
 
-
-
-<!-- mx-auto max-w-[355px] lg:max-w-full -->
-
-<div class="max-w-[1420px] px-[18px] relative mx-auto my-14  montserrat">
-    <img class="hidden lg:block top-[56px] right-[50px] absolute w-full" src="<?php echo get_template_directory_uri() . '/static/images/lets-talk-blob.png'; ?>" alt="">
-    <img class="block lg:hidden absolute left-0 z-10" src="<?php echo get_template_directory_uri() . '/static/images/archive-project-mobile-blob.png'; ?>" alt="">
-
-    <div class="letsTalkGardient relative py-[90px] lg:py-[60px] max-w-[1280px]">
-        <div class="text-center px-4 lg:px-28">
+<div class="letsTalkGardient-archive  montserrat relative overflow-hidden ">
+    <img class="hidden lg:block top-[100px] absolute w-full" src="<?php echo get_template_directory_uri() . '/static/images/archive-project-blob.png'; ?>" alt="">
+    <img class="block lg:hidden absolute" src="<?php echo get_template_directory_uri() . '/static/images/archive-project-mobile-blob.png'; ?>" alt="">
+    <div class=" relative pt-[60px] pb-[120px] lg:py-[120px] max-w-[1062px] mx-auto">
+        <div class="text-center ">
             <div class="text-2xl lg:text-4xl leading-[30px] lg:leading-[48px] font-bold letsTalkTitle ">
                 <?php
                 echo wpautop($text);

@@ -16,6 +16,10 @@
 
 // Components: have a single scss file for each individual component
 @import "./scss/components/_nemo-hover.scss";
+@import "./scss/components/_404.scss";
+@import "./scss/components/_cats-and-tags.scss";
+@import "./scss/components/_archive-project.scss";
+@import "./scss/components/_lets-talk.scss";
 
 .montserrat {
     font-family: "Montserrat", sans-serif;
@@ -30,20 +34,7 @@
     opacity: 0.4;
 }
 
-.letsTalkGardient {
-    background: linear-gradient(95.34deg, rgba(232, 196, 254, 0.4) -0.51%, rgba(253, 195, 220, 0.4) 128.64%);
-    border-radius: 16px;
-}
-.letsTalkGardient-archive {
-    background: linear-gradient(95.34deg, rgba(232, 196, 254, 0.4) -0.51%, rgba(253, 195, 220, 0.4) 128.64%);
-}
-.letsTalkTitle {
-    background: linear-gradient(95.34deg, #8803da -0.51%, #d4055c 128.64%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font: transparent;
-}
+
 .logo-links img {
     width: 16px;
     height: 16px;
@@ -56,9 +47,14 @@
     border: 1px solid;
 }
 
-.btn-active.project-btn {
-    background-color: red;
+
+.all-remove-check{
+    
+    display:none;
 }
+
+
+
 
 .green-gradient {
     position: relative;
@@ -94,31 +90,7 @@
     text-fill-color: transparent;
 }
 
-.portfolioDisc {
-    width: 100%;
-    height: 0px;
-    // height: calc(100vh - 52px);
-    // padding-top: 0px;
-    // overflow: auto;
-    -webkit-transition: all 0.4s linear;
-    -moz-transition: all 0.4s linear;
-    -o-transition: all 0.4s linear;
-    transition: all 0.4s linear;
-    // margin-top: 300px;
-    position: relative;
-    // background-color:#000;
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
-    // color: #FFF;
-    // background-color: rgb(251 207 232 / var(--tw-bg-opacity));
-}
 
-.anim:active .portfolioDisc {
-    // margin-top:221px;
-    height: 69px;
-    // padding-top: 10px;
-}
 .hamburger1 {
     display: none;
 }

@@ -36,6 +36,7 @@ function crb_attach_post_options()
         array(
             Field::make('image', 'firstimage', 'Optional: Main Photo at the top of the page {width:1180px,height:600px}')
                 ->set_value_type('id'),
+                Field::make('text', $prefix . 'name', 'Article name, will be used in loby pages'),
         )
     );
 

@@ -125,12 +125,11 @@ add_action('init', 'smartwp_disable_new_user_notifications');
 
 add_filter('pre_get_posts', 'query_post_type');
 function query_post_type($query) {
-  if( is_category() ) {
+  if( is_category() && $query->is_main_query()  ) {
     $post_type = get_query_var('post_type');
 
     if($post_type){
         $post_type = $post_type;
-
     } else{
         $post_type = ['nav_menu_item','project', 'post', 'article']; // don't forget nav_menu_item to allow menus to work!
     }

@@ -12,7 +12,7 @@ if (empty($values)) {
         <?php
         foreach ($values as $key => $v) {
 
-            echo '<div class="container grid lg:w-[220px] ] text-[#616161] mb-6 lg:mb-6">';
+            echo '<div class="container grid lg:w-[220px] ] text-[#616161] mb-6 lg:mb-6 text-center">';
             echo '<div class="w-[180px] h-[180px] mb-9 mx-auto">';
             echo get_img_html($v['image'],true, 'full', 'w-full h-full object-contain mb-16');
             // echo '<svg class="h-[110%]">';
