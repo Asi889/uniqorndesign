@@ -35,7 +35,7 @@ get_header();
 
 			<?php
 			foreach ($posts as $key => $_post) {
-				echo project_prev_cmp($_post,$term->name,true);
+				echo project_prev_cmp($_post,$term->name);
 			}
 			?>
 

@@ -19,11 +19,11 @@ const components = [
       className:'.partners-gallery-swiper-js'
     },
   },
-  {
-    Class: LoadMore,
-    selector: '.load-more-project-js',
-    options: {},
-  },
+  // {
+  //   Class: LoadMore,
+  //   selector: '.load-more-project-js',
+  //   options: {},
+  // },
   {
     Class: TestimonialsSwiper,
     selector: '.testimonials-swiper',

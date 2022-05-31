@@ -81,6 +81,9 @@ function order_posts_by_menu_order($query)
         $query->set('orderby', 'menu_order');
         $query->set('order', 'asc');
     }
+    if (!is_admin() && $query->is_main_query() && is_post_type_archive('project')) {
+        $query->set('posts_per_page', '50');
+    }
 
     return $query;
 }

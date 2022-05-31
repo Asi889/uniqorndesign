@@ -1,8 +1,11 @@
 <?php
 defined('ABSPATH') || die();
-
 global $wp_query, $posts;
 $term = get_queried_object();
+
+wp_redirect(get_post_type_archive_link('project') . '?taxonomies='.$term->term_id);
+die();
+
 $term_data = carbon_get_term_meta($term->term_id, $term->name, $container_id = '');
 $projects = (array) get_posts([
     'post_type' => 'project',

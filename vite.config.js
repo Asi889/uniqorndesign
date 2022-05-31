@@ -1,4 +1,5 @@
-// TODO: check https://github.com/wp-bond/boilerplate/blob/master/app/themes/boilerplate
+import vue from '@vitejs/plugin-vue'
+
 export default {
     build: {
       // generate manifest.json in outDir
@@ -20,4 +21,6 @@ export default {
       port: 3000
       // if changed match here /templates/html/vite.php
     },
+    plugins: [vue(),]
+
   }

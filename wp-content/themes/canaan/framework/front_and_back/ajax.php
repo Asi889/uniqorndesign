@@ -137,10 +137,10 @@ function get_more_posts_cb_ajax()
     while ($posts->have_posts()) :
         $posts->the_post();
         if($postType === 'project'){
-            $html .= project_prev_cmp(get_post(),false,false);
+            $html .= project_prev_cmp(get_post());
         }
         if($postType === 'article'){
-            $html .= article_prev_cmp(get_post(),false,false);
+            $html .= article_prev_cmp(get_post());
         }
 
     endwhile;
