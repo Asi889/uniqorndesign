@@ -57,9 +57,9 @@ class MagicFilter {
                     savedElm = []
 
                 }
-                    document.querySelector('.img-check-mark').classList.remove('all-remove-check')
-                    savedElm.push(event.target)
-                    event.target.style = "background-color: #EEEEEE"
+                document.querySelector('.img-check-mark').classList.remove('all-remove-check')
+                savedElm.push(event.target)
+                event.target.style = "background-color: #EEEEEE"
             } else {
                 savedElm.push(event.target)
                 event.target.classList.add(event.target.dataset.typer === "category" ? 'category-btn-active' : 'term-btn-active')
@@ -91,4 +91,4 @@ class MagicFilter {
     }
 }
 
-export default MagicFilter;
+export { MagicFilter };

@@ -6,8 +6,6 @@ Swiper.use([Navigation]);
 
 class PartnersSwiper{
     constructor(el, options){
-        console.log(options);
-        console.log("options");
         const swiper = new Swiper(options.className, {
             watchSlidesProgress: true,
             watchSlidesVisibility: true,

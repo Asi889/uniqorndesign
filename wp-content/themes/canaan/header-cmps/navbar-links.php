@@ -19,7 +19,7 @@
         
         echo '<li><a href="' . $logo['href'] . '" class="text-[#424242] mobile-text  hover:text-blue-400 lg:hover:text-green-500 w-8 h-8 grid place-items-center transition" target="_blank" rel="noopener noreferrer grid ">';
         if (str_contains($logo['href'], 'facebook')) {
-            // echo '<span class="sr-only">Facebook</span>';
+            echo '<span class="sr-only">Facebook</span>';
             get_template_part('static/svgs/nav-bar-logos/facebook');
         }elseif (str_contains($logo['href'], 'codepen')){
             echo '<span class="sr-only">codepen</span>';

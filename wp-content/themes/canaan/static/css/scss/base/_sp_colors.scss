@@ -1,0 +1,43 @@
+.gardientGreen {
+    background: linear-gradient(252.37deg, #fda14c 33.76%, #42cd60 74.9%);
+    opacity: 0.4;
+}
+
+
+.extra2-light {
+    background: rgb(252, 185, 32, 0.6);
+}
+
+.green-gradient {
+    position: relative;
+    background: linear-gradient(95.34deg, #c0eeca -0.51%, #8ebfff 128.64%);
+    &::after {
+        content: "";
+        width: 100%;
+        height: 80px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0 0 100% 100%;
+        z-index: 2;
+        background: linear-gradient(95.34deg, #c0eeca -0.51%, #8ebfff 128.64%);
+        transform: translateY(100%);
+        clip-path: ellipse(52% 115% at 48.83% -18.75%);
+    }
+}
+
+.liner-text {
+    background: linear-gradient(89.98deg, #268e3c -5.27%, #002352 126.26%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.liner-blue-green-text {
+    background: linear-gradient(89.6deg, #268e3c 25.2%, #005ad1 92.11%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}

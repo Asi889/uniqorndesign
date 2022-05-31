@@ -8,7 +8,7 @@ if (!$logos || empty($logos)) {
 
 <div class="swiper partners-gallery-swiper-js" >
 
-    <ul class="swiper-wrapper flex items-center  mt-0 lg:mt-20 flex-wrap md:flex-nowrap px-8 py-8 lg:py-20 lg:px-0 justify-center">
+    <ul class="swiper-wrapper flex items-center  mt-0 lg:mt-20 px-8 py-8 lg:py-20 lg:px-0 justify-center">
         <?php
         foreach ($logos as $key => $l) {
             if (!$l['logo']) {

@@ -79,12 +79,12 @@ function order_posts_by_menu_order($query)
 {
     if (!is_admin() && $query->is_main_query()) {
         $query->set('orderby', 'menu_order');
-        $query->set('order', 'desc');
+        $query->set('order', 'asc');
     }
 
     return $query;
 }
-// add_action('pre_get_posts', 'order_posts_by_menu_order');
+add_action('pre_get_posts', 'order_posts_by_menu_order');
 
 // Disable Automatic Update Email Notification Using Code 
 add_filter('auto_theme_update_send_email', '__return_false');

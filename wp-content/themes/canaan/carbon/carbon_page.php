@@ -12,18 +12,14 @@ function crb_attach_page_options()
     $metaBox = Container::make('post_meta', 'General')->where('post_template', '=', $post_template);
     $metaBox->add_fields(array(
         Field::make('text', $prefix . 'top_subtitle', 'Sub title'),
-        Field::make('complex', $prefix . 'specialize_in', 'We specialize in')
+        Field::make('text', $prefix . 'vision_title', 'Vision section title'),
+        Field::make('complex', $prefix . 'vision', 'Visions (purple section)')
             ->add_fields(array(
-                Field::make('image', 'image', 'Image'),
                 Field::make('text', 'title', 'title'),
-                Field::make('text', 'text', 'text')
-            )),
-        Field::make('complex', $prefix . 'vision', 'מה יש לנו')
-            ->add_fields(array(
-                Field::make('image', 'image', 'תמונה'),
-                Field::make('text', 'title', 'כותרת'),
-                Field::make('text', 'text', 'טקסט')
-            )),
+                Field::make('image', 'image', 'image'),
+                Field::make('textarea', 'text', 'free text')
+            ))->set_layout('tabbed-vertical')
+            ->set_header_template(' <% if (title) { %>  <%- title %> <% } %> '),
     ));
 
 
@@ -56,10 +52,10 @@ function crb_attach_page_options()
     $post_template =   $prefix . '.php';
     $metaBox = Container::make('post_meta', 'General')->where('post_template', '=', $post_template);
     $metaBox->add_fields(array(
-        Field::make('text', $prefix.'phone_number', 'Phone number'),
-        Field::make('text', $prefix.'email', 'Email'),
-        Field::make('text', $prefix.'whatsup', 'Whatsup'),
-        Field::make('rich_text', $prefix.'message_sent', 'message sent text')
+        Field::make('text', $prefix . 'phone_number', 'Phone number'),
+        Field::make('text', $prefix . 'email', 'Email')->set_attribute('type', 'email'),
+        Field::make('text', $prefix . 'whatsup', 'Whatsup'),
+        Field::make('rich_text', $prefix . 'message_sent', 'message sent text')
         // Field::make('date', $prefix . 'date', 'תאריך'),
     ));
 }

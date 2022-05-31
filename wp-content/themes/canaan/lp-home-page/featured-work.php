@@ -1,11 +1,10 @@
 <?php
 $projects = get_posts([
     'post_type' => 'project',
-    'numberposts'      => 4,
+    'posts_per_page'      => 4,
     'orderby'        => 'menu_order',
+    'order'          => 'ASC',
 ]);
-// print_r($projects);
-// die;
 if (!$projects || empty($projects)) {
     return;
 }
@@ -13,24 +12,22 @@ if (!$projects || empty($projects)) {
 $project_archive_link = get_post_type_archive_link('project');
 ?>
 
-<div class="max-w-[1420px] mx-auto px-5 lg:px-0">
-    <header class="py-[60px] lg:py20 px-5 lg:px-0">
+<section class="max-w-[1420px] mx-auto px-5 2xl:px-0">
+    <header class="py-[60px] lg:py20">
         <h2 class="text-4xl leading-[48px] lg:text-5xl lg:leading-[58px] font-bold md:text-blue-400 text-center montserrat  lg:text-left">
             <?= pll__('Featured work'); ?>
         </h2>
     </header>
-    <ul class="grid lg:flex flex-wrap  gap-y-5 lg:gap-y-10 gap-x-0 lg:gap-x-10 py-[60px] lg:py-8">
+    <ul class="grid md:grid-cols-2 gap-y-5 lg:gap-y-10 gap-x-0 lg:gap-x-10 py-[60px] lg:py-8">
         <?php
         foreach ($projects as $key => $p) {
-            $image = wp_get_attachment_image_src(get_post_thumbnail_id($p->ID), 'thumbnail');
-            // print_r($image);
-            // die;
-            echo '<a class="max-w-auto lg:max-w-[690px]  max-h-[434px] lg:max-h-[800px] bg-gray-50 w-full mx-auto hover:drop-shadow-2xl transition duration-300 px-2" href="'.get_the_permalink($p).'">';
-            // echo '<li class="grid ">';
-            echo '<img class="w-full max-h-[434px] lg:max-h-[800px] object-contain" src="' . $image[0] . '" alt="tumb" />';
-            // echo get_img_html($image[0]);
-            // echo '</li>';
+            $image = get_post_thumbnail_id($p->ID);
+            echo '<li class="lg:max-w-[690px]  h-[434px] lg:h-[800px]  w-full mx-auto hover:shadow rounded-2xl border border-[#F5F5F5] transition duration-300 overflow-hidden">';
+            echo '<a class="block w-full h-full" href="'.get_the_permalink($p).'" title="'.$p->post_title.'">';
+            echo get_img_html($image, true, 'full', 'w-full h-full object-cover');
+            echo '<span class="sr-only">'.$p->post_title.'</span>';
             echo '</a>';
+            echo '</li>';
         }
         ?>
 
@@ -42,4 +39,4 @@ $project_archive_link = get_post_type_archive_link('project');
     </div>
 
 
-</div>
+</section>

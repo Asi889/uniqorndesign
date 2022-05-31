@@ -11,7 +11,7 @@ get_header();
 ?>
 
 <div id="primary" class="content-area montserrat ">
-	<main id="main" class="site-main max-w-[1420px] montserrat mx-5 xl:mx-auto">
+	<main id="main" class="site-main max-w-[1420px] montserrat mx-5 xl:mx-auto px-5 2xl:px-0">
 
 		<div class="">
 

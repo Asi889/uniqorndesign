@@ -11,24 +11,3 @@
 
     
 }
-article.prose{
-    max-width: none;
-    font-family: inherit;
-}
-body article.prose *{
-    font-family: inherit;
-}
-body article.archive-description.prose{
-    max-width: 730px;
-}
-body article.prose h1,
-body article.prose h2,
-body article.prose h3,
-body article.prose h4,
-body article.prose h5,
-body article.prose h6,
-body article.prose p{
-    max-width: 700px;
-    margin-right: auto;
-    margin-left: auto;
-}

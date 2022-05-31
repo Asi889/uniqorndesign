@@ -32,7 +32,7 @@ get_header();
 				</header>
 
 				<div class="flex gap-x-2 lg:gap-x-4 gap-y-3 lg:gap-y-6 flex-wrap pt-5 lg:pt-10 mb-0 lg:mb-[112px] button-group filters-button-group">
-					<button class="flex items-center project-btn magic-b border-1 border-solid text-sm lg:text-2xl  border-[#212121] rounded-full px-2 py-1 lg:px-4 lg:py-2 montserrat all-btn-active allButton" data-division="allbuttons" data-filter="*" type="button">
+					<button class="flex items-center project-btn magic-b  border border-solid border-solid text-sm lg:text-2xl  border-[#212121] rounded-full px-2 py-1 lg:px-4 lg:py-2 montserrat all-btn-active allButton" data-division="allbuttons" data-filter="*" type="button">
 						<img class="img-check-mark" src="http://uniqorn-design.test:8080/wp-content/themes/canaan/static/images/black-checkmark.png" >
 						All
 					</button>
@@ -44,13 +44,13 @@ get_header();
 						'taxonomy' => 'category',
 					));
 					foreach ($terms as $key => $t) {
-						echo '<button type="button" data-tag-id="' . $t->term_id . '" data-typer="term"  data-filter="iso-' . $t->term_id . '" class="project-btn magic-b term-project-btn text-blue-500 flex gap-x-[7px] items-center border-1 border-solid  border-blue-500 active:bg-blue-200  text-sm lg:text-2xl lg:leading-none px-2 lg:px-4 h-[52px]  rounded-full montserrat">';
+						echo '<button type="button" data-tag-id="' . $t->term_id . '" data-typer="term"  data-filter="iso-' . $t->term_id . '" class="project-btn magic-b term-project-btn text-blue-500 flex gap-x-[7px] items-center border border-solid border-solid  border-blue-500 active:bg-blue-200  text-sm lg:text-2xl lg:leading-none px-2 lg:px-4 h-[52px]  rounded-full montserrat">';
 						echo '<img class=" check-mark-remove" src="' .  get_template_directory_uri() . '/static/images/blue-checkmark.png" >';
 						echo $t->name;
 						echo '</button>';
 					}
 					foreach ($cats as $key => $t) {
-						echo '<button type="button" data-tag-id="' . $t->term_id . '" data-typer="category"  data-filter="iso-' . $t->term_id . '"  class="project-btn magic-b  items category-project-btn text-purple-500 flex gap-x-[7px] items-center border-1 border-solid border-purple-500 active:bg-purple-200  text-sm lg:text-2xl lg:leading-none px-2 lg:px-4 h-[52px]  rounded-full montserrat">';
+						echo '<button type="button" data-tag-id="' . $t->term_id . '" data-typer="category"  data-filter="iso-' . $t->term_id . '"  class="project-btn magic-b  items category-project-btn text-purple-500 flex gap-x-[7px] items-center border border-solid border-solid border-purple-500 active:bg-purple-200  text-sm lg:text-2xl lg:leading-none px-2 lg:px-4 h-[52px]  rounded-full montserrat">';
 						echo '<img class=" check-mark-remove" src="' .  get_template_directory_uri() . '/static/images/purple-checkmark.png" >';
 						echo $t->name;
 						echo '</button>';
