@@ -9,7 +9,7 @@ $whatsup =  carbon_get_post_meta(get_the_ID(),'page-contactwhatsup');
         <h2 class="text-xl lg:text-2xl leading-[29px] font-bold text-superDark">
             <?= pll__("Let's chat") ;?>
         </h2>
-        <a href="https://api.whatsapp.com/send?phone=<?php echo $whatsup; ?>" class="flex items-center px-4 lg:px-6 py-2 lg:py-3 bg-green-400 hover:bg-green-500 focus:shadow-2xl transition duration-500 pt-4 rounded-md w-fit lg:w-auto" target="_blank" rel="noopener noreferrer">
+        <a href="https://api.whatsapp.com/send?phone=<?php echo $whatsup; ?>" class="flex items-center px-4 lg:px-6 py-2 lg:py-3 bg-green-400 hover:bg-green-500 focus:bg-green-500 transition duration-500 pt-4 rounded-md w-fit lg:w-auto" target="_blank" rel="noopener noreferrer">
             <div class="hidden lg:block">
                 <?php get_template_part('static/svgs/contact-page/whatsapp-icon'); ?>
             </div>
@@ -42,7 +42,7 @@ $whatsup =  carbon_get_post_meta(get_the_ID(),'page-contactwhatsup');
             </div>
             <div class="flex items-center lg:hidden ">
                 <?php get_template_part('static/svgs/contact-page/letter-mobile-icon'); ?>
-                <p class="text-base lg:text-2xl text-superDark pl-[10px] montserrat ">><?php echo $mail; ?></p>
+                <p class="text-base lg:text-2xl text-superDark pl-[10px] montserrat "><?php echo $mail; ?></p>
             </div>
         </a>
 

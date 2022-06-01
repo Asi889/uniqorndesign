@@ -21,7 +21,9 @@
         right: 0;
         border-radius: 0 0 100% 100%;
         z-index: 2;
-        background: linear-gradient(95.34deg, #c0eeca -0.51%, #8ebfff 128.64%);
+        // background: linear-gradient(95.34deg, #c0eeca -0.51%, #8ebfff 128.64%);
+    background: linear-gradient(53deg, #c0eeca -0.51%, #8ebfff 128.64%);
+
         transform: translateY(100%);
         clip-path: ellipse(52% 115% at 48.83% -18.75%);
     }

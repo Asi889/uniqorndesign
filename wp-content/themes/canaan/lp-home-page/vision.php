@@ -26,9 +26,9 @@ if (!$visions) return;
         ?>
 
     </div>
-    <div class="text-center pt-10 pb-8 lg:pb-[60px]">
-        <a class="rounded-lg text-white font-semibold text-base lg:text-2xl montserrat bg-purple-400 px-4 lg:px-6 py-2 lg:py-3 hover:bg-purple-500 focus:bg-purple-400 focus:shadow-2xl transition duration-300" href="<?= get_page_link($contact_page_link); ?>">
-            <?= pll__('See more'); ?>
+    <div class="text-left md:text-center pt-10 pb-8 lg:pb-[60px]">
+        <a class="rounded-lg text-white font-semibold text-base lg:text-2xl montserrat bg-purple-400 px-4 lg:px-6 py-2 lg:py-3 hover:bg-purple-500 focus:bg-purple-400 transition duration-300" href="<?= get_page_link($contact_page_link); ?>">
+            <?= pll__('See more about us'); ?>
         </a>
     </div>
 

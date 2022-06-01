@@ -32,9 +32,9 @@ $project_archive_link = get_post_type_archive_link('project');
         ?>
 
     </ul>
-    <div class="text-center pt-10 pb-8 lg:pb-[60px]">
-        <a class="rounded-md text-white font-semibold text-base lg:text-2xl montserrat bg-blue-400 hover:bg-blue-500 focus:bg-blue-400 focus:shadow-2xl transition ease-in-out duration-300 px-4 lg:px-6 py-2 lg:py-3 " href="<?php echo $project_archive_link; ?>">
-            <?= pll__('I want to see more'); ?>
+    <div class="text-left md:text-center pt-10 pb-8 lg:pb-[60px]">
+        <a class="rounded-md text-white font-semibold text-base lg:text-2xl montserrat bg-blue-400 hover:bg-blue-500 focus:bg-blue-400 transition ease-in-out duration-300 px-4 lg:px-6 py-2 lg:py-3 " href="<?php echo $project_archive_link; ?>">
+            <?= pll__('I want to see more projects'); ?>
         </a>
     </div>
 

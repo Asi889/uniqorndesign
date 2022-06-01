@@ -92,7 +92,7 @@ get_header();
 
 					</div>
 					<!-- <button data-project-button="true" class=" w-auto mx-auto  py-4 px-4 bg-blue-400 hover:bg-blue-600 transition active:bg-blue-200 text-white text-base lg:text-2xl font-semibold montserrat rounded-md justify-self-center mt-10">
-						see more
+						load more
 					</button> -->
 				</section>
 

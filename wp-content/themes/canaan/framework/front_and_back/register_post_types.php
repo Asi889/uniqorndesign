@@ -58,7 +58,7 @@ function canaan_register_post_types_cb()
 		[
 			'menu_icon' => 'dashicons-format-aside',
 			'supports' => ['title',  'editor', 'page-attributes', 'revisions', 'thumbnail', 'excerpt'],
-			'taxonomies' => ['post_tag', 'writer', 'category'],
+			'taxonomies' => ['post_tag', 'category'],
 			'show_in_rest' => true,
 		],
 		's'

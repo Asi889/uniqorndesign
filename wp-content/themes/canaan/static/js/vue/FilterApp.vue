@@ -25,8 +25,8 @@
         <section class="flex flex-col">
 
             <transition-group name="list" tag="ul"
-                class="grid lg:grid-cols-3 md:grid-cols-2  gap-x-5 gap-y-20  mt-5 lg:mt-5 list-none">
-                <li v-for="project in projects" :key="project.id">
+                class="filter-app-grid grid lg:grid-cols-3 md:grid-cols-2  gap-x-5 gap-y-20  mt-5 lg:mt-5 list-none">
+                <li v-for="project in projects" :key="project.id" class="filter-app-grid__col">
                     <div v-html="project.html"></div>
                 </li>
             </transition-group>

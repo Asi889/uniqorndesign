@@ -40,7 +40,7 @@ function term_cmp(WP_Term $term, $is_odd)
         <?= pll__('We specialize in'); ?>
     </h2>
     
-    <ol class="grid gap-y-0 lg:gap-y-[60px] montserrat ">
+    <ol class="grid gap-y-11 lg:gap-y-[60px] montserrat ">
         <?php
         foreach ($terms as $key => $c) {
             // print_r(carbon_get_term_meta($term->term_id, 'category'));

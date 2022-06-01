@@ -1,7 +1,7 @@
 <?php
 defined('ABSPATH') || die();
 
-$subtitle = carbon_get_post_meta(get_the_ID(), 'subtitle');
+$subtitle = carbon_get_post_meta(get_the_ID(), 'project_name');
 ?>
 <div class="max-w-7xl mx-auto py-8 lg:py-20  px-5 lg:px-0 montserrat">
 

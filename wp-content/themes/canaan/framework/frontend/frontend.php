@@ -183,7 +183,10 @@ function project_prev_cmp(WP_Post $p)
     }
 
     $class = 'project-card group w-full mx-auto grid px-0 lg:px-3 py-0 lg:py-3 rounded-lg transition ease-in-out duration-300 ';
-
+    $title = carbon_get_post_meta($p->ID, 'project_name');
+    if (!$title) {
+        $title = $p->post_title;
+    }
 
     $image = get_post_thumbnail_id($p->ID,);
     $html .= '<div data-post-tags="[' . implode(',', $posttagsid) . ',' . implode(',', $categoriesid) . ']" class="p-item ' . $class . '">';
@@ -191,7 +194,7 @@ function project_prev_cmp(WP_Post $p)
     $html .= '<div class="bg-[#F9F2FF] h-[436px] overflow-hidden rounded-2xl w-full">';
     $html .= get_img_html($image, true, 'full', 'h-full w-full object-cover group-hover:scale-105 transition ease-in-out duration-500');
     $html .= '</div>';
-    $html .= '<h2 class="font-bold text-xl lg:text-2xl text-[#424242]  group-hover:opacity-75 transition">' . $p->post_name . '</h2>';
+    $html .= '<h2 class="font-bold text-xl lg:text-2xl text-[#424242]  group-hover:opacity-75 transition">' . $title . '</h2>';
     $html .= '<a class="absolute inset-0 w-full h-full z-0" href="' . get_the_permalink($p) . '"><span class="sr-only">' . $p->post_title . '</span></a>';
     $html .= '</div>';
     $html .= '<div class="pt-2">';
